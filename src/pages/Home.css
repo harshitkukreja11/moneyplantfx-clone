@@ -2,90 +2,276 @@
 
 /* Hero Section */
 .hero-section {
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .hero-section h1 {
-    font-size: 4rem;
-    font-weight: bold;
-  }
-  
-  .hero-section p {
-    font-size: 1.5rem;
-  }
-  
-  /* CTA Section */
-  .cta-section {
-    background-color: #007bff;
-    padding: 3rem 0;
-  }
-  
-  .cta-section .btn {
-    border-radius: 50px;
-  }
-  
-  /* Platforms Section */
-  .platforms img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .platforms .row {
-    margin-top: 3rem;
-  }
-  
-  .platforms .col {
-    padding: 1rem;
-  }
-  
-  /* All-in-One Section */
-  .all-in-one img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-  
-  /* Features Section */
-  .features-section .card {
-    border-radius: 10px;
-  }
-  
-  .features-section .card-body {
-    padding: 2rem;
-  }
-  
-  .features-section .card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .features-section .card img {
-    max-height: 60px;
-    margin-bottom: 1rem;
-  }
-  
-  /* Business Section */
-  .business-section img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-  
-  .business-section .col {
-    margin-bottom: 2rem;
-  }
-  
-  /* Background Section */
-  .bg-dark {
-    background-size: cover;
-    background-position: center;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Add parallax effect */
+  background-attachment: fixed;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem; /* Add some space below the title */
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem; /* Add more space below the description */
+}
+
+.hero-section.btn-primary {
+  background-color: #007bff; /* Primary button color */
+  border-color: #007bff;
+  color: white;
+  border-radius: 5px; /* Slightly less rounded */
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-section.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.hero-section.btn-outline-light {
+  color: white;
+  border-color: white;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-section.btn-outline-light:hover {
+  background-color: white;
+  color: #007bff;
+  border-color: white;
+}
+
+.hero-section.btn-light {
+  color: #007bff;
+  background-color: white;
+  border-color: white;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-section.btn-light:hover {
+  background-color: #f0f0f0;
+  color: #0056b3;
+  border-color: #e0e0e0;
+}
+
+/* Animated Finger Section */
+.py-5 {
+  padding-top: 3rem!important; /* Adjust padding for consistency */
+  padding-bottom: 3rem!important;
+}
+
+/* Features Section */
+.features-section {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 4rem 0; /* Adjust padding */
+}
+
+.features-section.card {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  border: none; /* Remove default border */
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Add a subtle shadow */
+}
+
+.features-section.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15); /* Slightly increase shadow on hover */
+}
+
+.features-section.card-body {
+  padding: 1.5rem; /* Adjust padding inside the card */
+  text-align: center; /* Center the content */
+}
+
+.features-section.card-title {
+  font-size: 1.25rem; /* Slightly smaller title */
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: #007bff; /* Primary color for titles */
+}
+
+.features-section.card img {
+  max-height: 60px;
+  margin-bottom: 1rem;
+}
+
+.features-section.card-text {
+  font-size: 0.9rem;
+  color: #6c757d; /* Muted text color */
+}
+
+/* Chart Section */
+.parallax {
+  background-attachment: fixed;
+}
+
+/* Platforms Section */
+.platforms {
+  padding: 4rem 0;
+  background-color: white;
+}
+
+.platforms h2 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #007bff; /* Primary color for title */
+}
+
+.platforms img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.8; /* Slightly reduce opacity */
+  transition: opacity 0.3s ease;
+}
+
+.platforms img:hover {
+  opacity: 1;
+}
+
+.platforms.row {
+  margin-top: 2rem;
+}
+
+.platforms.col {
+  padding: 1rem;
+  display: flex;
+  justify-content: center; /* Center images in columns */
+}
+
+/* Call to Action Section */
+.bg-primary {
+  background-color: #007bff!important; /* Ensure primary color is used */
+}
+
+.bg-primary h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.bg-primary p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.bg-primary.btn-light {
+  color: #007bff;
+  background-color: white;
+  border-color: white;
+  border-radius: 50px; /* Pill shape */
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bg-primary.btn-light:hover {
+  background-color: #f0f0f0;
+  color: #0056b3;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-to-top-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  background-color: #0056b3;
+}
+
+/* General Section Padding */
+section {
+  padding: 4rem 0; /* Adjust default section padding */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+ .hero-section {
+    height: auto; /* Adjust height for smaller screens */
     padding: 5rem 0;
   }
-  
+
+ .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+ .hero-section p {
+    font-size: 1.2rem;
+  }
+
+ .hero-section.d-flex {
+    flex-direction: column; /* Stack buttons on smaller screens */
+    gap: 1rem!important;
+  }
+
+ .cta-section.btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+ .features-section.card {
+    margin-bottom: 1.5rem;
+  }
+
+ .platforms.col {
+    flex-basis: 33.33%; /* Adjust column width for better layout */
+  }
+
+ .platforms.row {
+    margin-top: 1rem;
+  }
+
+ .bg-primary h2 {
+    font-size: 1.75rem;
+  }
+
+ .bg-primary p {
+    font-size: 1rem;
+  }
+
+ .bg-primary.btn-light {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+ .platforms.col {
+    flex-basis: 50%; /* Adjust column width for even smaller screens */
+  }
+}

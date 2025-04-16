@@ -8,7 +8,7 @@ import './Home.css';
 const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  },);
 
   return (
     <div className="min-vh-100">
@@ -30,12 +30,20 @@ const Home = () => {
             Updates 24*7 on market trends with extensive background data on
             every investment
           </p>
-          <div className="d-flex justify-content-center gap-3">
+          <div className="d-flex justify-content-center gap-3 mb-3">
             <Button variant="primary" size="lg">
               Open Trading Account
             </Button>
             <Button variant="outline-light" size="lg">
               Learn More
+            </Button>
+          </div>
+          <div className="d-flex justify-content-center gap-2">
+            <Button variant="light" size="md">
+              Login
+            </Button>
+            <Button variant="light" size="md">
+              Sign Up
             </Button>
           </div>
         </Container>
@@ -70,38 +78,159 @@ const Home = () => {
       <section className="features-section py-5 bg-light">
         <Container>
           <Row className="text-center g-4">
-            {[...Array(8)].map((_, idx) => (
-              <Col md={3} sm={6} key={idx} data-aos="fade-zoom-in" data-aos-delay={idx * 200}>
-                <Card className="h-100 shadow-sm border-0">
-                  <Card.Body>
-                    <img
-                      src={`https://moneyplantfx.com/wp-content/uploads/2024/07/ic${idx + 1}.png`}
-                      alt={`Feature Icon ${idx + 1}`}
-                      className="mb-3"
-                      style={{ height: '60px' }}
-                    />
-                    <Card.Title className="fw-bold">Feature Title {idx + 1}</Card.Title>
-                    <Card.Text className="text-muted">
-                      Short description for feature {idx + 1}.
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
+            <Col md={3} sm={6} data-aos="fade-zoom-in" data-aos-delay={0}>
+              <Card className="h-100 shadow-sm border-0">
+                <Card.Body>
+                  <img
+                    src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic1.png"
+                    alt="Lowest Spreads"
+                    className="mb-3"
+                    style={{ height: '60px' }}
+                  />
+                  <Card.Title className="fw-bold">Lowest Spreads</Card.Title>
+                  <Card.Text className="text-muted">
+                    Lowest spreads (0.0 pips per EUR/USD).[1]
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={3} sm={6} data-aos="fade-zoom-in" data-aos-delay={200}>
+              <Card className="h-100 shadow-sm border-0">
+                <Card.Body>
+                  <img
+                    src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic2.png"
+                    alt="Balanced Approach"
+                    className="mb-3"
+                    style={{ height: '60px' }}
+                  />
+                  <Card.Title className="fw-bold">Balanced Approach</Card.Title>
+                  <Card.Text className="text-muted">
+                    Network of major global banks and financial institutions for
+                    fund safety.[1]
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={3} sm={6} data-aos="fade-zoom-in" data-aos-delay={400}>
+              <Card className="h-100 shadow-sm border-0">
+                <Card.Body>
+                  <img
+                    src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic3.png"
+                    alt="Advanced Trading Analytics"
+                    className="mb-3"
+                    style={{ height: '60px' }}
+                  />
+                  <Card.Title className="fw-bold">
+                    Advanced Trading Analytics
+                  </Card.Title>
+                  <Card.Text className="text-muted">
+                    Advanced trading analytics with MT5.[1]
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={3} sm={6} data-aos="fade-zoom-in" data-aos-delay={600}>
+              <Card className="h-100 shadow-sm border-0">
+                <Card.Body>
+                  <img
+                    src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic4.png"
+                    alt="Transparency"
+                    className="mb-3"
+                    style={{ height: '60px' }}
+                  />
+                  <Card.Title className="fw-bold">Transparency</Card.Title>
+                  <Card.Text className="text-muted">
+                    Transparency in our model.[1]
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={3} sm={6} data-aos="fade-zoom-in" data-aos-delay={800}>
+              <Card className="h-100 shadow-sm border-0">
+                <Card.Body>
+                  <img
+                    src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic5.png"
+                    alt="Diverse Investment Portfolio"
+                    className="mb-3"
+                    style={{ height: '60px' }}
+                  />
+                  <Card.Title className="fw-bold">
+                    Diverse Investment Portfolio
+                  </Card.Title>
+                  <Card.Text className="text-muted">
+                    Diverse portfolio including crypto, Forex, indices, metals,
+                    and equities.[1]
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={3} sm={6} data-aos="fade-zoom-in" data-aos-delay={1000}>
+              <Card className="h-100 shadow-sm border-0">
+                <Card.Body>
+                  <img
+                    src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic6.png"
+                    alt="Invest Easy"
+                    className="mb-3"
+                    style={{ height: '60px' }}
+                  />
+                  <Card.Title className="fw-bold">Invest Easy</Card.Title>
+                  <Card.Text className="text-muted">
+                    Easy registration in 5 minutes and fast online transactions
+                  .[1]
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={3} sm={6} data-aos="fade-zoom-in" data-aos-delay={1200}>
+              <Card className="h-100 shadow-sm border-0">
+                <Card.Body>
+                  <img
+                    src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic7.png"
+                    alt="0% commission and charges"
+                    className="mb-3"
+                    style={{ height: '60px' }}
+                  />
+                  <Card.Title className="fw-bold">
+                    0% commission and charges
+                  </Card.Title>
+                  <Card.Text className="text-muted">
+                    0% commission on deposits with minimal to zero commission for
+                    traders.[1]
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={3} sm={6} data-aos="fade-zoom-in" data-aos-delay={1400}>
+              <Card className="h-100 shadow-sm border-0">
+                <Card.Body>
+                  <img
+                    src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic8.png"
+                    alt="Multilingual Support"
+                    className="mb-3"
+                    style={{ height: '60px' }}
+                  />
+                  <Card.Title className="fw-bold">
+                    Multilingual Support
+                  </Card.Title>
+                  <Card.Text className="text-muted">
+                    Multilingual 24/7 customer support.[1]
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
           </Row>
         </Container>
       </section>
 
       {/* Chart Section with Parallax */}
       <section
-        className="text-white d-flex align-items-center parallax"
+        className="text-white d-flex align-items-center"
         style={{
-          backgroundImage:
-            'url(https://moneyplantfx.com/wp-content/uploads/2024/07/chart-1536x366.png)',
           backgroundAttachment: 'fixed',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           height: '60vh',
+          backgroundColor: '#343a40' /* Added a dark background color as the image is removed */
         }}
       >
         <Container data-aos="fade-up">
@@ -117,15 +246,18 @@ const Home = () => {
           <Row className="align-items-center">
             <Col md={6} data-aos="flip-left">
               <img
-                src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic6.png"
-                alt="Analytics"
-                className="img-fluid rounded"
+                src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic3.png"
+                alt="Advanced Analytics"
+                className="img-fluid rounded shadow"
               />
             </Col>
             <Col md={6} data-aos="flip-right">
-              <h3 className="fw-bold mb-3">Advanced Analytics at Your Fingertips</h3>
+              <h3 className="fw-bold mb-3">
+                Advanced Trading Analytics with MT5
+              </h3>
               <p className="text-muted">
-                Make informed decisions using AI-powered analytics and insights tailored to your trading strategy.
+                Make informed decisions using advanced trading analytics available
+                on the MT5 platform.[1]
               </p>
             </Col>
           </Row>
@@ -140,34 +272,36 @@ const Home = () => {
               <img
                 src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic1.png"
                 alt="Lowest Spreads"
-                className="img-fluid rounded"
+                className="img-fluid rounded shadow"
               />
             </Col>
             <Col md={6} data-aos="flip-right">
               <h3 className="fw-bold mb-3">Lowest Spreads, Highest Returns</h3>
               <p className="text-muted">
-                Trade with the lowest spreads for higher profits and better efficiency.
+                Trade with the lowest spreads (0.0 pips per EUR/USD) for higher
+                profits and better efficiency.[1]
               </p>
             </Col>
           </Row>
         </Container>
       </section>
 
-      {/* Advanced Trading Analytics Section */}
+      {/* Diverse Investment Portfolio Section */}
       <section className="py-5 bg-white">
         <Container data-aos="fade-up">
           <Row className="align-items-center">
             <Col md={6} data-aos="flip-left">
               <img
-                src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic3.png"
-                alt="Advanced Trading Analytics"
-                className="img-fluid rounded"
+                src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic5.png"
+                alt="Diverse Investment Portfolio"
+                className="img-fluid rounded shadow"
               />
             </Col>
             <Col md={6} data-aos="flip-right">
-              <h3 className="fw-bold mb-3">Advanced Trading Analytics</h3>
+              <h3 className="fw-bold mb-3">Diverse Investment Portfolio</h3>
               <p className="text-muted">
-                Use our advanced trading analytics tools to predict market trends and make informed trading decisions.
+                Access a diverse investment portfolio including crypto, Forex,
+                indices, metals, and equities.[1]
               </p>
             </Col>
           </Row>
@@ -189,7 +323,13 @@ const Home = () => {
               'play-store',
               'leptop',
             ].map((name, idx) => (
-              <Col xs={6} md={2} key={name} data-aos="zoom-in" data-aos-delay={idx * 100}>
+              <Col
+                xs={6}
+                md={2}
+                key={name}
+                data-aos="zoom-in"
+                data-aos-delay={idx * 100}
+              >
                 <img
                   src={`https://moneyplantfx.com/wp-content/uploads/2024/07/${name}.png`}
                   alt={name}
@@ -202,15 +342,24 @@ const Home = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="bg-primary text-white text-center py-5" data-aos="zoom-in">
+      <section
+        className="bg-primary text-white text-center py-5"
+        data-aos="zoom-in"
+      >
         <Container>
           <h2 className="h4 fw-semibold mb-3">
             Start Your Forex Journey With MoneyPlantFX
           </h2>
           <p className="mb-3">
             Sign up now and get started with the most trusted trading partner.
+            Easy registration in 5 minutes and fast online transactions.[1]
           </p>
-          <Button href="/accounts" variant="light" size="lg" className="rounded-pill">
+          <Button
+            href="/accounts"
+            variant="light"
+            size="lg"
+            className="rounded-pill"
+          >
             Open an Account
           </Button>
         </Container>
