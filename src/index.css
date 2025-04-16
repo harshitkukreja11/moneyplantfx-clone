@@ -1,13 +1,9 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* src/index.css */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+/* You can add any other global styles here */
+/* src/components/Navbar.css or in your global stylesheet */
+.navbar-nav .active {
+    font-weight: bold;
+    color: #007bff; /* You can change this to any color you prefer */
+  }
+  

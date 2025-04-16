@@ -1,0 +1,91 @@
+/* Home.css */
+
+/* Hero Section */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  
+  .hero-section p {
+    font-size: 1.5rem;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    background-color: #007bff;
+    padding: 3rem 0;
+  }
+  
+  .cta-section .btn {
+    border-radius: 50px;
+  }
+  
+  /* Platforms Section */
+  .platforms img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .platforms .row {
+    margin-top: 3rem;
+  }
+  
+  .platforms .col {
+    padding: 1rem;
+  }
+  
+  /* All-in-One Section */
+  .all-in-one img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  /* Features Section */
+  .features-section .card {
+    border-radius: 10px;
+  }
+  
+  .features-section .card-body {
+    padding: 2rem;
+  }
+  
+  .features-section .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .features-section .card img {
+    max-height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Business Section */
+  .business-section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .business-section .col {
+    margin-bottom: 2rem;
+  }
+  
+  /* Background Section */
+  .bg-dark {
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+  }
+  

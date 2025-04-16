@@ -1,0 +1,60 @@
+/* src/components/Navbar.css */
+.custom-navbar {
+    background-color: #007bff; /* Blue background for navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for the navbar */
+  }
+  
+  .custom-navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    height: 40px; /* Adjust the height of the logo */
+  }
+  
+  .custom-nav-link {
+    color: #ffffff; /* White text for the links */
+    font-weight: 500;
+    padding: 0.8rem 1.2rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+  
+  .custom-nav-link:hover, .custom-nav-link:focus {
+    color: #ffd700; /* Yellow hover effect */
+  }
+  
+  .navbar-button {
+    background-color: #ff6f00; /* Orange color for the buttons */
+    border-color: #ff6f00; /* Same orange border color */
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px; /* Rounded button edges */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .navbar-button:hover, .navbar-button:focus {
+    background-color: #e65c00; /* Darker orange for hover */
+    border-color: #e65c00;
+  }
+  
+  .navbar-button:active {
+    background-color: #d94b00; /* Dark orange on click */
+    border-color: #d94b00;
+  }
+  
+  /* Running Text */
+  .running-text {
+    background-color: #ff6f00; /* Orange background */
+    color: white;
+    font-size: 1rem;
+  }
+  
+  marquee {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
