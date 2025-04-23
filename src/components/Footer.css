@@ -1,60 +1,125 @@
-/* src/components/Footer.css */
-
+/* Footer background and text color */
 .footer {
-    background-color: #333; /* Dark background color */
-    color: #ffffff; /* White text */
-  }
-  
-  .footer-logo {
-    margin-bottom: 1.5rem;
-  }
-  
-  .footer-logo-img {
-    width: 150px; /* Adjust logo size */
-  }
-  
-  .footer-description {
-    font-size: 0.9rem;
-    color: #ccc; /* Light gray text */
-  }
-  
+  background-color: #343a40; /* Dark background color (Bootstrap's default bg-dark) */
+  color: #fff; /* Default text color */
+  /* The py-5 class in React component adds padding */
+}
+
+/* Footer logo */
+.footer-logo-img {
+  max-width: 180px; /* Adjust max-width as needed for logo size */
+  height: auto;     /* Maintain aspect ratio */
+  margin-bottom: 1rem; /* Spacing below logo */
+}
+
+/* Footer description */
+.footer-description {
+  font-size: 0.9rem; /* Slightly smaller font size */
+  color: #ccc;     /* Muted text color for description */
+  margin-bottom: 1rem; /* Spacing below description */
+}
+
+/* Footer heading (for link columns) */
+.footer-heading {
+  font-size: 1rem;     /* Adjust size if needed */
+  font-weight: bold;
+  margin-bottom: 1rem; /* Spacing below heading */
+  color: #fff;         /* Ensure heading is clearly visible */
+}
+
+/* Footer links */
+.footer-links {
+  padding-left: 0; /* Remove default padding if list-unstyled isn't enough */
+}
+
+.footer-links li {
+   margin-bottom: 0.5rem; /* Spacing between links */
+}
+
+.footer-links a {
+  color: #fff;           /* Link color */
+  font-size: 0.9rem;     /* Link font size */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.footer-links a:hover {
+  color: #ffa500; /* Orange hover color - adjust as needed */
+  text-decoration: none; /* Ensure no underline on hover unless desired */
+}
+
+/* Footer social media icons */
+.footer-socials .btn-link {
+  color: #fff;          /* Icon color (inherits from button) */
+  padding: 0.25rem 0.5rem; /* Padding around the icon */
+  margin-right: 0.5rem; /* Spacing between icons */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-socials .btn-link i {
+  font-size: 1.2rem; /* Icon size */
+  vertical-align: middle; /* Align icon nicely if needed */
+}
+
+/* Apply hover color to the icon when hovering the button */
+.footer-socials .btn-link:hover {
+  color: #ffa500; /* Orange hover color for the button/icon */
+}
+
+
+/* Risk warnings and legal text styling */
+/* Use the .small class provided by Bootstrap or refine it */
+.footer .small { /* Targeting .small specifically within .footer */
+    font-size: 0.75rem; /* Make legal text noticeably smaller */
+    color: #bbb;      /* Muted color for legal text */
+    line-height: 1.4;  /* Adjust line spacing for readability */
+    margin-bottom: 0.5rem; /* Consistent spacing between paragraphs */
+}
+
+.footer .small strong {
+    color: #ddd; /* Make bolded parts slightly stand out */
+}
+
+/* Separator line (optional, using the <hr> in the React code) */
+.footer hr {
+    border-top: 1px solid #495057; /* Style the horizontal rule */
+}
+
+/* Footer bottom text (copyright) */
+.footer-bottom {
+  /* pt-4 class in React adds top padding */
+  margin-top: 1rem; /* Add margin above copyright if <hr> isn't used */
+}
+
+.footer-bottom p {
+  font-size: 0.8rem; /* Smaller font size for copyright */
+  color: #aaa;     /* Muted color */
+  margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767.98px) { /* Target screens smaller than Bootstrap md breakpoint */
   .footer-heading {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    /* Add margin-top if needed when columns stack */
+    margin-top: 1rem;
+  }
+
+  .footer-logo-img {
+    max-width: 150px; /* Slightly smaller logo on mobile */
   }
   
-  .footer-links li {
-    margin-bottom: 0.5rem;
+  /* Optional: Center text in columns on mobile if desired */
+  /*
+  .footer .col-md-4 { 
+      text-align: center; 
   }
-  
-  .footer-links a {
-    text-decoration: none;
-    color: #ccc;
-    transition: color 0.3s ease;
+  .footer-socials {
+      justify-content: center;
+      display: flex; // Needed for justify-content
   }
-  
-  .footer-links a:hover {
-    color: #ff6f00; /* Orange color on hover */
+  .footer-links {
+      text-align: center; // If centering links too
   }
-  
-  .footer-socials i {
-    font-size: 1.5rem;
-    color: #ffffff;
-  }
-  
-  .footer-socials a {
-    transition: color 0.3s ease;
-  }
-  
-  .footer-socials a:hover {
-    color: #ff6f00; /* Orange color on hover */
-  }
-  
-  .footer-bottom {
-    border-top: 1px solid #444; /* Light border for the bottom */
-    font-size: 0.875rem;
-    color: #bbb; /* Light gray text */
-    padding-top: 1rem;
-  }
-  
+  */
+}

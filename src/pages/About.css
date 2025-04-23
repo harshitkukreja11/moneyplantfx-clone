@@ -1,0 +1,42 @@
+/* src/pages/About.css */
+
+.about-main {
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .about-highlighted-section {
+    background-image: url('https://cognitus.com/wp-content/uploads/2024/05/plants-with-coins-stacked-dirt-banknote-low-e1717083998480-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px 30px;
+    border-radius: 0;
+    margin: 0;
+  }
+  
+  .about-highlighted-section .overlay {
+    background: none; /* Removed black overlay */
+    color: #fff;
+    padding: 0;
+    max-width: 800px;
+  }
+  
+  .key-features-title {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #1c3c6b;
+    margin-top: 60px;
+  }
+  
+  .key-feature p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+  }
+  

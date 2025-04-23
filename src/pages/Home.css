@@ -1,7 +1,14 @@
-/* Home.css */
+/* src/pages/Home.css */
 
-/* Hero Section */
+/* --- General Section Styling --- */
+/* Consider if global padding is needed or if Bootstrap utilities (py-4, py-5) suffice */
+/* section { */
+/* padding: 4rem 0; /* Default padding for sections */
+/* } */
+
+/* --- Hero Section --- */
 .hero-section {
+  /* background-size, position, height, color, display, align, justify, text-align are good */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -10,162 +17,202 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* Add parallax effect */
+  /* Parallax effect */
   background-attachment: fixed;
+  position: relative; /* Needed for potential pseudo-element overlay */
+  overflow: hidden; /* Good practice for fixed backgrounds */
 }
+
+/* Optional: Add a dark overlay for better text readability */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Adjust darkness (0.3 = 30% black) */
+  z-index: 1; /* Behind content */
+}
+
+/* Ensure Hero content is above the overlay */
+.hero-section .container {
+  position: relative;
+  z-index: 2; /* Above overlay */
+}
+
 
 .hero-section h1 {
-  font-size: 4rem;
+  font-size: 3.5rem; /* Slightly adjusted size */
   font-weight: bold;
-  margin-bottom: 1rem; /* Add some space below the title */
+  margin-bottom: 1rem;
 }
 
-.hero-section p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem; /* Add more space below the description */
+.hero-section p.lead { /* Target the lead paragraph specifically */
+  font-size: 1.4rem; /* Slightly adjusted size */
+  margin-bottom: 2rem;
+  max-width: 700px; /* Constrain width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hero-section.btn-primary {
-  background-color: #007bff; /* Primary button color */
+/* --- Hero Section Buttons (Corrected Selectors) --- */
+.hero-section .btn-primary { /* Space indicates descendant */
+  background-color: #007bff;
   border-color: #007bff;
   color: white;
-  border-radius: 5px; /* Slightly less rounded */
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 0.9rem 1.8rem; /* Adjusted padding */
+  font-size: 1.1rem;    /* Adjusted size */
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.hero-section.btn-primary:hover {
+.hero-section .btn-primary:hover {
   background-color: #0056b3;
   border-color: #0056b3;
 }
 
-.hero-section.btn-outline-light {
+.hero-section .btn-outline-light { /* Space indicates descendant */
   color: white;
   border-color: white;
   border-radius: 5px;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  padding: 0.9rem 1.8rem; /* Adjusted padding */
+  font-size: 1.1rem;    /* Adjusted size */
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.hero-section.btn-outline-light:hover {
+.hero-section .btn-outline-light:hover {
   background-color: white;
   color: #007bff;
-  border-color: white;
+  /* border-color: white; */ /* Not needed, background covers border */
 }
 
-.hero-section.btn-light {
+/* Login/Signup Buttons */
+.hero-section .btn-light { /* Space indicates descendant */
   color: #007bff;
   background-color: white;
   border-color: white;
   border-radius: 5px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.6rem 1.2rem; /* Adjusted padding */
+  font-size: 0.9rem;    /* Adjusted size */
   font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.hero-section.btn-light:hover {
+.hero-section .btn-light:hover {
   background-color: #f0f0f0;
   color: #0056b3;
-  border-color: #e0e0e0;
+  /* border-color: #e0e0e0; */
 }
 
-/* Animated Finger Section */
-.py-5 {
-  padding-top: 3rem!important; /* Adjust padding for consistency */
-  padding-bottom: 3rem!important;
-}
 
-/* Features Section */
+/* --- Features Section --- */
 .features-section {
   background-color: #f8f9fa; /* Light gray background */
-  padding: 4rem 0; /* Adjust padding */
+  padding: 4rem 0;
 }
 
-.features-section.card {
+/* Card Styling (Corrected Selectors) */
+.features-section .card { /* Space indicates descendant */
   border-radius: 10px;
-  transition: transform 0.3s ease;
-  border: none; /* Remove default border */
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Add a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  height: 100%; /* Ensure cards in a row have same height (already set inline) */
 }
 
-.features-section.card:hover {
+.features-section .card:hover { /* Space indicates descendant */
   transform: translateY(-5px);
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15); /* Slightly increase shadow on hover */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* Slightly enhanced shadow */
 }
 
-.features-section.card-body {
-  padding: 1.5rem; /* Adjust padding inside the card */
-  text-align: center; /* Center the content */
+.features-section .card-body { /* Space indicates descendant */
+  padding: 1.5rem;
+  text-align: center;
+  display: flex; /* Enable flex for vertical alignment */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-start; /* Align content to the top */
 }
 
-.features-section.card-title {
-  font-size: 1.25rem; /* Slightly smaller title */
+.features-section .card-title { /* Space indicates descendant */
+  font-size: 1.15rem; /* Adjusted size */
   font-weight: bold;
+  margin-top: 0.5rem; /* Space between icon and title */
   margin-bottom: 0.75rem;
-  color: #007bff; /* Primary color for titles */
+  color: #343a40; /* Darker color for better contrast */
 }
 
-.features-section.card img {
-  max-height: 60px;
-  margin-bottom: 1rem;
+.features-section .card img { /* Space indicates descendant */
+  max-height: 50px; /* Adjusted size */
+  width: auto;      /* Maintain aspect ratio */
+  margin-left: auto; /* Center image */
+  margin-right: auto;
+  margin-bottom: 0.5rem; /* Space below icon */
 }
 
-.features-section.card-text {
-  font-size: 0.9rem;
-  color: #6c757d; /* Muted text color */
+.features-section .card-text { /* Space indicates descendant */
+  font-size: 0.88rem; /* Adjusted size */
+  color: #6c757d;
+  margin-top: auto; /* Push text to bottom if needed, or remove if causing issues */
 }
 
-/* Chart Section */
-.parallax {
-  background-attachment: fixed;
+/* --- Chart Section (Parallax Section) --- */
+/* Assuming you have a section with class 'parallax-section' or use inline styles */
+.parallax-section { /* Example if using a class */
+   background-attachment: fixed;
+   background-size: cover;
+   background-position: center;
+   padding: 6rem 0; /* Adjust padding as needed */
 }
 
-/* Platforms Section */
-.platforms {
+/* --- Platforms Section --- */
+/* IMPORTANT: Add className="platforms-section" to the platform <section> in Home.js */
+.platforms-section {
   padding: 4rem 0;
   background-color: white;
 }
 
-.platforms h2 {
+.platforms-section h2 {
   text-align: center;
   font-weight: bold;
-  margin-bottom: 2rem;
-  color: #007bff; /* Primary color for title */
+  margin-bottom: 3rem; /* More space below title */
+  color: #343a40;
 }
 
-.platforms img {
-  max-width: 100%;
-  height: auto;
-  opacity: 0.8; /* Slightly reduce opacity */
-  transition: opacity 0.3s ease;
+.platforms-section .row {
+  margin-top: 1rem;
+  align-items: center; /* Vertically align icons if heights differ */
 }
 
-.platforms img:hover {
-  opacity: 1;
-}
-
-.platforms.row {
-  margin-top: 2rem;
-}
-
-.platforms.col {
+.platforms-section .col {
   padding: 1rem;
   display: flex;
-  justify-content: center; /* Center images in columns */
+  justify-content: center;
+  align-items: center; /* Center icons within column */
 }
 
-/* Call to Action Section */
+.platforms-section img {
+  max-width: 80%; /* Control max width within the column */
+  max-height: 50px; /* Control max height */
+  height: auto;
+  opacity: 0.75; /* Slightly less opacity */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.platforms-section img:hover {
+  opacity: 1;
+  transform: scale(1.1); /* Add slight scale on hover */
+}
+
+/* --- Call to Action Section (bg-primary) --- */
 .bg-primary {
-  background-color: #007bff!important; /* Ensure primary color is used */
+  /* background-color: #007bff !important; /* Bootstrap class handles this */
 }
 
 .bg-primary h2 {
-  font-size: 2rem;
+  font-size: 1.9rem; /* Adjusted size */
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -173,105 +220,145 @@
 .bg-primary p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
+  max-width: 750px; /* Constrain width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.bg-primary.btn-light {
+/* CTA Button (Corrected Selector) */
+.bg-primary .btn-light { /* Space indicates descendant */
   color: #007bff;
   background-color: white;
   border-color: white;
   border-radius: 50px; /* Pill shape */
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  padding: 0.9rem 2rem; /* Adjusted padding */
+  font-size: 1.1rem;    /* Adjusted size */
   font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-.bg-primary.btn-light:hover {
+.bg-primary .btn-light:hover {
   background-color: #f0f0f0;
   color: #0056b3;
+  transform: scale(1.03); /* Slight scale on hover */
 }
 
-/* Scroll to Top Button */
+/* --- Scroll to Top Button --- */
+/* IMPORTANT: Add className="scroll-to-top-btn" to the scroll <Button> in Home.js */
 .scroll-to-top-btn {
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
+  width: 45px; /* Slightly larger */
+  height: 45px;
+  display: flex; /* Already set inline by React Bootstrap */
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Size of the icon/arrow inside */
   cursor: pointer;
-  opacity: 0.7;
+  opacity: 0.8; /* Start slightly more visible */
   transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  position: fixed; /* Ensure it's fixed (already set inline) */
+  bottom: 20px;    /* Adjust position (overrides inline 'm-3') */
+  right: 20px;
+  z-index: 1030;   /* Ensure it's above most content */
 }
 
 .scroll-to-top-btn:hover {
   opacity: 1;
   transform: scale(1.1);
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker on hover */
 }
 
-/* General Section Padding */
-section {
-  padding: 4rem 0; /* Adjust default section padding */
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 991.98px) { /* Adjust breakpoint if needed (e.g., for md) */
+   /* Add styles for tablets if necessary */
+   .features-section .card-title {
+     font-size: 1.1rem;
+   }
+    .features-section .card-text {
+     font-size: 0.85rem;
+   }
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
- .hero-section {
-    height: auto; /* Adjust height for smaller screens */
-    padding: 5rem 0;
+@media (max-width: 767.98px) { /* md breakpoint */
+  .hero-section {
+    height: auto;
+    padding: 6rem 1rem; /* Adjust padding */
   }
 
- .hero-section h1 {
+  .hero-section h1 {
     font-size: 2.5rem;
   }
 
- .hero-section p {
-    font-size: 1.2rem;
+  .hero-section p.lead {
+    font-size: 1.1rem;
   }
 
- .hero-section.d-flex {
-    flex-direction: column; /* Stack buttons on smaller screens */
-    gap: 1rem!important;
+  /* Target the specific flex containers for buttons */
+  .hero-section .d-flex.gap-3,
+  .hero-section .d-flex.gap-2 {
+    flex-direction: column;
+    align-items: center; /* Center buttons when stacked */
+    width: 100%;
+    max-width: 300px; /* Limit button stack width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+   .hero-section .d-flex.gap-3 .btn,
+   .hero-section .d-flex.gap-2 .btn {
+       width: 100%; /* Make stacked buttons full width */
+   }
+
+  .features-section {
+      padding: 3rem 0;
   }
 
- .cta-section.btn {
-    padding: 1rem 2rem;
-    font-size: 1rem;
+  .platforms-section h2 {
+      margin-bottom: 2rem;
   }
 
- .features-section.card {
-    margin-bottom: 1.5rem;
+  .platforms-section img {
+      max-height: 40px; /* Smaller icons on mobile */
+      opacity: 1; /* Ensure visibility */
   }
 
- .platforms.col {
-    flex-basis: 33.33%; /* Adjust column width for better layout */
-  }
-
- .platforms.row {
-    margin-top: 1rem;
-  }
-
- .bg-primary h2 {
+  .bg-primary h2 {
     font-size: 1.75rem;
   }
 
- .bg-primary p {
+  .bg-primary p {
     font-size: 1rem;
   }
 
- .bg-primary.btn-light {
+  .bg-primary .btn-light {
     font-size: 1rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  /* Center align detailed feature sections */
+  .py-5 .row > div[class*="col-"] { /* Target columns more broadly */
+      text-align: center !important;
+  }
+  .py-5 .row img.img-fluid {
+      margin-bottom: 1.5rem; /* Space below images when stacked */
+      max-width: 150px !important; /* Control image size */
   }
 }
 
-@media (max-width: 576px) {
- .platforms.col {
-    flex-basis: 50%; /* Adjust column width for even smaller screens */
+@media (max-width: 575.98px) { /* sm breakpoint */
+  .hero-section h1 {
+    font-size: 2.1rem;
+  }
+   .hero-section p.lead {
+    font-size: 1rem;
+  }
+  .features-section .card-title {
+    font-size: 1rem;
+  }
+  .features-section .card-text {
+    font-size: 0.8rem;
   }
 }
