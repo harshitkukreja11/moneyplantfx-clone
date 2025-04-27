@@ -14,7 +14,7 @@ const Footer = () => {
                 src="https://moneyplantfx.com/wp-content/uploads/2024/08/logo-mpfx.png"
                 alt="MoneyPlantFX Logo"
                 className="footer-logo-img" // Ensure this class controls size appropriately
-                // style={{ maxWidth: '200px', height: 'auto' }} // Optional inline style for size control
+              
               />
             </div>
             <p className="footer-description small mb-3"> {/* Added margin-bottom */}
@@ -42,9 +42,9 @@ const Footer = () => {
 
           {/* --- Column 2: Trading Links --- */}
           <Col md={4} className="mb-4">
-            <h5 className="footer-heading mb-3">Trading</h5>
+            <h5 className="footer-heading mb-3"> Start Trading</h5>
             <ul className="footer-links list-unstyled">
-              <li><a href="/accounts" className="text-white d-block mb-2">Accounts</a></li> {/* Added d-block and mb-2 for spacing */}
+              <li><a href="/accounts" className="text-white d-block mb-2">Open Live Account</a></li> {/* Added d-block and mb-2 for spacing */}
               <li><a href="/platforms" className="text-white d-block mb-2">Platforms</a></li>
               <li><a href="/markets" className="text-white d-block mb-2">Markets</a></li>
               <li><a href="/tools" className="text-white d-block mb-2">Tools</a></li> {/* Assuming a tools page */}

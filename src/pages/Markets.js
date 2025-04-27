@@ -1,65 +1,120 @@
 // src/pages/Markets.js
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import './Markets.css'; // Optional custom CSS for hover effects
+import { Container, Row, Col, Table } from 'react-bootstrap';
+import './Markets.css';
 
-const markets = [
+const forexFeatures = [
   {
-    title: 'Forex',
-    description: 'Trade major, minor, and exotic currency pairs with competitive spreads and fast execution.',
-    image: 'https://source.unsplash.com/featured/?forex,finance',
-    link: '#forex'
+    image: "https://moneyplantfx.com/wp-content/uploads/2024/07/trade-over.png",
+    label: "Trade over +30 currencies pairs"
   },
   {
-    title: 'Commodities',
-    description: 'Access gold, silver, oil, and more. Diversify your portfolio with global commodities.',
-    image: 'https://source.unsplash.com/featured/?gold,oil',
-    link: '#commodities'
+    image: "https://moneyplantfx.com/wp-content/uploads/2024/07/competitive-spreads.png",
+    label: "Competitive Spreads"
   },
   {
-    title: 'Indices',
-    description: 'Trade global indices like S&P 500, NASDAQ, FTSE 100, and more.',
-    image: 'https://source.unsplash.com/featured/?stocks,index',
-    link: '#indices'
+    image: "https://moneyplantfx.com/wp-content/uploads/2024/07/leverage.png",
+    label: "1:500 Leverage"
   },
   {
-    title: 'Crypto',
-    description: 'Explore the world of cryptocurrency with Bitcoin, Ethereum, and other digital assets.',
-    image: 'https://source.unsplash.com/featured/?crypto,bitcoin',
-    link: '#crypto'
+    image: "https://moneyplantfx.com/wp-content/uploads/2024/07/fixed-spreads.png",
+    label: "Fixed & Variable Spreads"
   },
+  {
+    image: "https://moneyplantfx.com/wp-content/uploads/2024/07/zero.png",
+    label: "Zero Commission"
+  },
+  {
+    image: "https://moneyplantfx.com/wp-content/uploads/2024/07/no-hidden.png",
+    label: "No Hidden Charges"
+  },
+  {
+    image: "https://moneyplantfx.com/wp-content/uploads/2024/07/open24hours.png",
+    label: "Open 24 Hours, 5 Days a Week"
+  },
+  {
+    image: "https://moneyplantfx.com/wp-content/uploads/2024/07/deep-interbank.png",
+    label: "Deep Interbank Liquidity"
+  }
+];
+
+const symbolTable1 = [
+  "AUDUSD", "EURUSD", "GBPUSD", "USDJPY", "USDCAD", "USDCHF", "NZDUSD",
+  "AUDCHF", "AUDCAD", "AUDJPY", "AUDNZD", "CADJPY", "CADCHF", "CHFJPY"
+];
+
+const symbolTable2 = [
+  "EURAUD", "EURCAD", "EURCHF", "EURGBP", "EURNZD", "EURJPY",
+  "GBPAUD", "GBPCAD", "GBPCHF", "GBPJPY", "GBPNZD",
+  "NZDCAD", "NZDCHF", "NZDJPY"
 ];
 
 const Markets = () => {
   return (
     <div className="bg-light py-5">
       <Container>
-        <h2 className="text-center fw-bold text-primary mb-5">Our Markets</h2>
-        <Row>
-          {markets.map((market, index) => (
-            <Col key={index} md={6} className="mb-4">
-              <Card className="market-card h-100 border-0 shadow-sm">
-                <Card.Img
-                  variant="top"
-                  src={market.image}
-                  alt={market.title}
-                  style={{ height: '220px', objectFit: 'cover' }}
+        {/* Forex Trading Section */}
+        <div className="bg-white p-4 rounded shadow-sm">
+          <h3 className="fw-bold text-primary mb-4">Trading Forex</h3>
+          <p className="text-muted">
+            Foreign Exchange offers traders the ability to exchange currencies globally. This market offers high liquidity and allows trading in large volumes.
+          </p>
+
+          <Row className="g-4 mb-4">
+            {forexFeatures.map((item, index) => (
+              <Col key={index} xs={6} md={3} className="text-center">
+                <img
+                  src={item.image}
+                  alt={item.label}
+                  style={{ width: '60px', height: '60px', objectFit: 'contain' }}
                 />
-                <Card.Body className="d-flex flex-column justify-content-between">
-                  <div>
-                    <Card.Title className="text-dark fs-4">{market.title}</Card.Title>
-                    <Card.Text className="text-muted">{market.description}</Card.Text>
-                  </div>
-                  <div className="text-end mt-3">
-                    <Button variant="outline-primary" href={market.link}>
-                      Learn More
-                    </Button>
-                  </div>
-                </Card.Body>
-              </Card>
+                <p className="mt-2 small fw-medium text-muted">{item.label}</p>
+              </Col>
+            ))}
+          </Row>
+
+          <h5 className="fw-bold mt-4 mb-2">Contract Size</h5>
+          <p>(1 lot = 100,000 base units)</p>
+
+          <Row>
+            <Col md={6}>
+              <Table striped bordered hover size="sm">
+                <thead>
+                  <tr>
+                    <th>Symbol</th>
+                    <th>Minimum Trade Size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {symbolTable1.map((symbol, i) => (
+                    <tr key={i}>
+                      <td>{symbol}</td>
+                      <td>0.01</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
             </Col>
-          ))}
-        </Row>
+            <Col md={6}>
+              <Table striped bordered hover size="sm">
+                <thead>
+                  <tr>
+                    <th>Symbol</th>
+                    <th>Minimum Trade Size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {symbolTable2.map((symbol, i) => (
+                    <tr key={i}>
+                      <td>{symbol}</td>
+                      <td>0.01</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </Col>
+          </Row>
+        </div>
       </Container>
     </div>
   );

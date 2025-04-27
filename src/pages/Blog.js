@@ -3,36 +3,106 @@ import React from 'react';
 
 const blogPosts = [
   {
-    title: "Top 5 Tips for New Forex Traders",
-    author: "Team MoneyPlantFX",
-    excerpt: "Starting your trading journey? Learn essential strategies to manage risk and stay ahead in the forex game.",
-    image: "https://source.unsplash.com/featured/?forex,trading"
+    title: "4 Factors That You Must Know Before Choosing The Best Forex Trading Platform",
+    date: "July 19, 2022",
+    excerpt: "Online trading has grown tremendously... You may […]",
+    image: "https://moneyplantfx.com/wp-content/uploads/2022/07/4-Factors-That-You-Must-Know-Before-Choosing-The-Best-Forex-Trading-Platform-1024x576-1.jpg"
   },
   {
-    title: "Understanding Technical Analysis",
-    author: "John Doe",
-    excerpt: "Dive into chart patterns, indicators, and how to apply them to real-world trading scenarios.",
-    image: "https://source.unsplash.com/featured/?charts,technical"
+    title: "How to Use MetaTrader 5 (MT5)? Beginners Guide",
+    date: "July 14, 2022",
+    excerpt: "After the huge success of Metatrader 4 (MT 4)... Metatrader 5 platform […]",
+    image: "https://moneyplantfx.com/wp-content/uploads/2022/07/How-to-Use-MetaTrader-5-MT5-Beginners-Guide-1024x576-1.jpg"
   },
+  {
+    title: "Learn How To Do Gold Trading Online In 4 Simple Steps",
+    date: "July 13, 2022",
+    excerpt: "Gold has been a popular commodity for ages... more investors […]",
+    image: "https://moneyplantfx.com/wp-content/uploads/2022/07/Learn-How-To-Do-Gold-Trading-Online-In-4-Simple-Steps-1024x576-1.jpg"
+  },
+  {
+    title: "Why MoneyplantFX Is The Best Platform For Forex Trading In Around The World",
+    date: "July 12, 2022",
+    excerpt: "Exchange of currencies has been an integral part of trading... trading takes place 24 hour a day […]",
+    image: "https://moneyplantfx.com/wp-content/uploads/2022/07/Why-MoneyplantFX-Is-The-Best-Platform-For-Forex-Trading-In-India-1024x576-1.jpg"
+  },
+  {
+    title: "5 Tips to Choose The Best Trading App In India To Earn Money",
+    date: "June 29, 2022",
+    excerpt: "The trading market in India has its traces in the 18th century... now investors rely on the online trading apps […]",
+    image: "https://moneyplantfx.com/wp-content/uploads/2022/06/5-Tips-to-Choose-The-Best-Trading-App-In-India-To-Earn-Money-1024x576-1.jpeg"
+  }
 ];
 
 const Blog = () => {
   return (
-    <div className="min-h-screen bg-white py-16 px-4 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-blue-600 mb-12">Our Blog</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div className="container py-5">
+      <div className="row">
+        {/* Blog Content */}
+        <div className="col-lg-8">
           {blogPosts.map((post, index) => (
-            <div key={index} className="bg-gray-100 rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-              <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-2">{post.title}</h3>
-                <p className="text-sm text-gray-500 mb-3">By {post.author}</p>
-                <p className="text-gray-700">{post.excerpt}</p>
+            <div className="card mb-4 shadow-sm" key={index}>
+              <img src={post.image} className="card-img-top" alt={post.title} />
+              <div className="card-body">
+                <h5 className="card-title fw-bold">{post.title}</h5>
+                <small className="text-muted">{post.date}</small>
+                <p className="card-text mt-2">{post.excerpt}</p>
+                <button className="btn btn-warning">Read More</button>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Sidebar */}
+        <div className="col-lg-4">
+          <div className="position-sticky" style={{ top: '80px' }}>
+            {/* Search */}
+            <div className="mb-4">
+              <h5 className="fw-bold">Search</h5>
+              <input type="text" className="form-control" placeholder="Search" />
+            </div>
+
+            {/* Recent Posts */}
+            <div className="mb-4">
+              <h5 className="fw-bold">Recent Posts</h5>
+              <ul className="list-unstyled">
+                {blogPosts.slice(0, 5).map((post, index) => (
+                  <li key={index}>
+                    <button className="text-decoration-none text-dark d-block mb-2 btn btn-link p-0 text-start">
+                      {post.title}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Recent Comments */}
+            <div className="mb-4">
+              <h5 className="fw-bold">Recent Comments</h5>
+              <p className="text-muted">No comments to show.</p>
+            </div>
+
+            {/* Archives */}
+            <div className="mb-4">
+              <h5 className="fw-bold">Archives</h5>
+              <ul className="list-unstyled">
+                <li><button className="btn btn-link text-dark p-0 text-start">July 2022</button></li>
+                <li><button className="btn btn-link text-dark p-0 text-start">June 2022</button></li>
+              </ul>
+            </div>
+
+            {/* Categories */}
+            <div className="mb-4">
+              <h5 className="fw-bold">Categories</h5>
+              <p>Blogs</p>
+            </div>
+
+            {/* Social Profile */}
+            <div>
+              <h5 className="fw-bold">Social Profile</h5>
+              <p>Coming Soon</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,40 +1,78 @@
 // src/pages/News.js
 import React from 'react';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
-const newsItems = [
+// --- Data for Promotions ---
+const promoItems = [
   {
-    title: "Global Markets Surge After Economic Reports",
-    date: "April 12, 2025",
-    summary: "Stocks and currencies rallied after stronger-than-expected employment data boosted investor sentiment.",
-    image: "https://source.unsplash.com/featured/?news,stocks"
+    title: "Refer A Friend & Get Rewarded",
+    description: "Get up to $150 as reward while you refer the friend.",
+    buttonText: "Claim Now",
+    link: "#",
+    image: "https://moneyplantfx.com/wp-content/uploads/2024/07/refer-friend.png", // Image for logo
+    color: "bg-light" // Light background for the card
   },
   {
-    title: "Oil Prices Hit New Highs",
-    date: "April 10, 2025",
-    summary: "Brent crude continues to climb as supply concerns mount amid geopolitical tensions.",
-    image: "https://source.unsplash.com/featured/?oil,market"
-  },
+    title: "75% IB Partnership",
+    description: "Earn up to 75% on Spreads charged to your client. The more they trade, the more you earn!",
+    buttonText: "Claim Now",
+    link: "#",
+    image: "https://moneyplantfx.com/wp-content/uploads/2024/07/partnership.png", // Image for logo
+    color: "bg-light" // Light background for the card
+  }
 ];
 
 const News = () => {
   return (
-    <div className="min-h-screen bg-gray-100 py-16 px-4 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-blue-600 mb-12">Latest News</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {newsItems.map((news, index) => (
-            <div key={index} className="bg-white rounded-xl shadow hover:shadow-lg transition">
-              <img src={news.image} alt={news.title} className="w-full h-48 object-cover rounded-t-xl" />
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-1">{news.title}</h3>
-                <p className="text-sm text-gray-500 mb-3">{news.date}</p>
-                <p className="text-gray-600">{news.summary}</p>
-              </div>
-            </div>
-          ))}
+    <div className="py-5 bg-light">
+      <Container>
+        {/* --- Offers Section --- */}
+        <div className="text-center mb-5">
+          <h2 className="fw-bold text-uppercase text-dark">Choose From Offers</h2>
         </div>
-      </div>
+        <Row className="g-4">
+          {promoItems.map((promo, index) => (
+            <Col md={6} key={index}>
+              <Card
+                className={`h-100 shadow-sm border-0`}
+                style={{ backgroundColor: '#FFEDE2', padding: '30px' }} // Increased padding for larger card
+              >
+                <Card.Body className="d-flex flex-column justify-content-center text-center">
+                  {/* Logo Image */}
+                  <div className="d-flex justify-content-center mb-4">
+                    <img
+                      src={promo.image}
+                      alt={promo.title}
+                      className="img-fluid"
+                      style={{ height: '100px', objectFit: 'contain' }}
+                    />
+                  </div>
+                  <div>
+                    <Card.Title className="fw-semibold">{promo.title}</Card.Title>
+                    <Card.Text className="text-muted">
+                      {promo.description}
+                    </Card.Text>
+                  </div>
+                  <div className="mt-4">
+                    <Button
+                      href={promo.link}
+                      variant="light"
+                      className="rounded-pill px-4 py-2"
+                      style={{
+                        backgroundColor: 'orangered', // Set the button background color
+                        color: 'white', // White text color
+                        fontWeight: '600' // Slightly bolder font for the button
+                      }}
+                    >
+                      {promo.buttonText}
+                    </Button>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 };

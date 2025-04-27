@@ -1,6 +1,9 @@
 /* Footer background and text color */
 .footer {
-  background-color: #343a40; /* Dark background color (Bootstrap's default bg-dark) */
+  background-image: url('https://media.istockphoto.com/id/922671512/photo/blue-point-world-globe-north-america-and-south-america-map-on-dark-background.jpg?s=612x612&w=is&k=20&c=d0aC-kAr7WB68QJkRclI5e7s09Vdm-JG47s8LHrYDW4=');
+  background-size: cover; /* Cover the entire footer */
+  background-position: center center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating */
   color: #fff; /* Default text color */
   /* The py-5 class in React component adds padding */
 }
@@ -67,7 +70,6 @@
   color: #ffa500; /* Orange hover color for the button/icon */
 }
 
-
 /* Risk warnings and legal text styling */
 /* Use the .small class provided by Bootstrap or refine it */
 .footer .small { /* Targeting .small specifically within .footer */
@@ -108,18 +110,4 @@
   .footer-logo-img {
     max-width: 150px; /* Slightly smaller logo on mobile */
   }
-  
-  /* Optional: Center text in columns on mobile if desired */
-  /*
-  .footer .col-md-4 { 
-      text-align: center; 
-  }
-  .footer-socials {
-      justify-content: center;
-      display: flex; // Needed for justify-content
-  }
-  .footer-links {
-      text-align: center; // If centering links too
-  }
-  */
 }

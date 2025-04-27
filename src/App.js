@@ -14,8 +14,8 @@ import Platforms from './pages/Platforms';
 import News from './pages/News';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
-import FAB from './components/FAB';
-import FeatureCards from './components/FeatureCards';
+import StickyFooterIcons from './components/StickyFooterIcons';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -44,14 +44,11 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
         </Routes>
 
-        {/* Example: Placing FeatureCard below the main content */}
-        <FeatureCards />
-
-        {/* Example: Placing Fab outside of main to be potentially fixed */}
-        <FAB />
-        
+      
         {/* Footer component */}
         <Footer />  {/* Add Footer */}
+        <StickyFooterIcons />
+        <ScrollToTopButton />
       </div>
     </Router>
   );
