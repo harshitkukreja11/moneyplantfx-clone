@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import PageLoader from './components/PageLoader';
-import BlogSlider from './components/BlogSlider';
 import Footer from './components/Footer';  // Import Footer
 
 import Home from './pages/Home';
@@ -34,7 +33,7 @@ const App = () => {
 
         {/* Example: Placing BlogSlider on the Home page */}
         <Routes>
-          <Route path="/" element={<> <BlogSlider /> <Home /> </>} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/accounts" element={<Accounts />} />
           <Route path="/markets" element={<Markets />} />

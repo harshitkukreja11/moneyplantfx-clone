@@ -1,26 +1,23 @@
 /* src/pages/Home.css */
 
 /* --- General Section Styling --- */
-/* Consider if global padding is needed or if Bootstrap utilities (py-4, py-5) suffice */
-/* section { */
-/* padding: 4rem 0; /* Default padding for sections */
-/* } */
+/* Using Bootstrap padding utilities (py-*, px-*) in JSX is generally preferred */
 
 /* --- Hero Section --- */
 .hero-section {
-  /* background-size, position, height, color, display, align, justify, text-align are good */
+  background-image: url('https:\/\/vimeo.com\/980575359&quot;'); /* Define background image */
   background-size: cover;
-  background-position: center;
-  height: 100vh;
+  background-position: center center;
+  min-height: 80vh; /* Use min-height instead of height for flexibility */
+  height: auto; /* Allow content to define height if needed */
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  /* Parallax effect */
-  background-attachment: fixed;
-  position: relative; /* Needed for potential pseudo-element overlay */
-  overflow: hidden; /* Good practice for fixed backgrounds */
+  text-align: center; /* Default text-align, overridden by Bootstrap cols */
+  background-attachment: fixed; /* Parallax effect - Test on mobile! */
+  position: relative;
+  overflow: hidden;
 }
 
 /* Optional: Add a dark overlay for better text readability */
@@ -31,334 +28,365 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3); /* Adjust darkness (0.3 = 30% black) */
-  z-index: 1; /* Behind content */
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust darkness (0.4 = 40% black) */
+  z-index: 1;
 }
 
 /* Ensure Hero content is above the overlay */
 .hero-section .container {
   position: relative;
-  z-index: 2; /* Above overlay */
+  z-index: 2;
+  padding-top: 4rem;    /* Add padding for content spacing */
+  padding-bottom: 4rem;
 }
-
 
 .hero-section h1 {
-  font-size: 3.5rem; /* Slightly adjusted size */
-  font-weight: bold;
+  font-size: clamp(2.5rem, 5vw, 3.8rem); /* Responsive font size */
+  font-weight: 700; /* Use numeric weight */
   margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Subtle text shadow */
 }
 
-.hero-section p.lead { /* Target the lead paragraph specifically */
-  font-size: 1.4rem; /* Slightly adjusted size */
+.hero-section p.lead {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem); /* Responsive font size */
   margin-bottom: 2rem;
-  max-width: 700px; /* Constrain width */
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 400;
 }
 
-/* --- Hero Section Buttons (Corrected Selectors) --- */
-.hero-section .btn-primary { /* Space indicates descendant */
-  background-color: #007bff;
-  border-color: #007bff;
-  color: white;
+/* --- Hero Section Buttons --- */
+/* Styling for Login/Sign Up buttons used in Home.js */
+.hero-section .btn-light, /* Target both variants */
+.hero-section .btn-outline-light {
   border-radius: 5px;
-  padding: 0.9rem 1.8rem; /* Adjusted padding */
-  font-size: 1.1rem;    /* Adjusted size */
-  font-weight: bold;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  padding: 0.75rem 1.5rem; /* Consistent padding */
+  font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive font size */
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  margin: 0.5rem; /* Add some margin for spacing */
 }
 
-.hero-section .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+/* Specific hover for Login button */
+.hero-section .btn-light {
+  color: #0056b3; /* Match the blue theme */
+  background-color: white;
+  border-color: white;
 }
 
-.hero-section .btn-outline-light { /* Space indicates descendant */
+.hero-section .btn-light:hover {
+  background-color: #f0f0f0; /* Slightly off-white */
+  color: #003d80; /* Darker blue */
+  border-color: #f0f0f0;
+  transform: translateY(-2px); /* Subtle lift */
+}
+
+/* Specific hover for Sign Up button */
+.hero-section .btn-outline-light {
   color: white;
   border-color: white;
-  border-radius: 5px;
-  padding: 0.9rem 1.8rem; /* Adjusted padding */
-  font-size: 1.1rem;    /* Adjusted size */
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: transparent; /* Ensure transparent */
 }
 
 .hero-section .btn-outline-light:hover {
   background-color: white;
-  color: #007bff;
-  /* border-color: white; */ /* Not needed, background covers border */
-}
-
-/* Login/Signup Buttons */
-.hero-section .btn-light { /* Space indicates descendant */
-  color: #007bff;
-  background-color: white;
+  color: #0056b3; /* Match the blue theme */
   border-color: white;
-  border-radius: 5px;
-  padding: 0.6rem 1.2rem; /* Adjusted padding */
-  font-size: 0.9rem;    /* Adjusted size */
+  transform: translateY(-2px); /* Subtle lift */
+}
+
+
+/* --- .btn-orange styling (As requested for Home.js) --- */
+.btn-orange {
+  background-color: #ff7f00 !important; /* Use !important cautiously, ensures override */
+  border-color: #ff7f00 !important;
+  color: white !important;
   font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
-.hero-section .btn-light:hover {
-  background-color: #f0f0f0;
-  color: #0056b3;
-  /* border-color: #e0e0e0; */
+.btn-orange:hover,
+.btn-orange:focus,
+.btn-orange:active {
+  background-color: #e67300 !important; /* Darker shade */
+  border-color: #e67300 !important;
+  color: white !important;
+  box-shadow: none; /* Override default focus shadow if needed */
+  transform: translateY(-2px); /* Subtle lift */
 }
 
 
-/* --- Features Section --- */
-.features-section {
-  background-color: #f8f9fa; /* Light gray background */
+/* --- Feature Section ("YOU TRADE IT. WE HAVE IT.") Box Styling --- */
+/* Target the section specifically if possible (add class in JS?) or rely on structure */
+.bg-light .border.rounded.p-4 { /* Example targeting based on current structure */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.bg-light .border.rounded.p-4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+/* --- Features Section (8 Cards) --- */
+/* Add className="features-section-cards" to the section in Home.js */
+.features-section-cards {
+  /* background-color: #f8f9fa; /* Handled by bg-white in JS now */
   padding: 4rem 0;
 }
 
-/* Card Styling (Corrected Selectors) */
-.features-section .card { /* Space indicates descendant */
+.features-section-cards .card {
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: none;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  height: 100%; /* Ensure cards in a row have same height (already set inline) */
+  /* height: 100% is handled by h-100 class in JS */
 }
 
-.features-section .card:hover { /* Space indicates descendant */
+.features-section-cards .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* Slightly enhanced shadow */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
 }
 
-.features-section .card-body { /* Space indicates descendant */
+.features-section-cards .card-body {
   padding: 1.5rem;
   text-align: center;
-  display: flex; /* Enable flex for vertical alignment */
-  flex-direction: column; /* Stack content vertically */
-  justify-content: flex-start; /* Align content to the top */
+  /* Flex properties handled by d-flex flex-column in JS */
 }
 
-.features-section .card-title { /* Space indicates descendant */
-  font-size: 1.15rem; /* Adjusted size */
-  font-weight: bold;
-  margin-top: 0.5rem; /* Space between icon and title */
+.features-section-cards .card-title {
+  font-size: 1.1rem; /* Adjusted size */
+  font-weight: 600;
+  /* margin-top: 0.5rem; /* Spacing handled by mt-auto in JS */
   margin-bottom: 0.75rem;
-  color: #343a40; /* Darker color for better contrast */
-}
-
-.features-section .card img { /* Space indicates descendant */
-  max-height: 50px; /* Adjusted size */
-  width: auto;      /* Maintain aspect ratio */
-  margin-left: auto; /* Center image */
-  margin-right: auto;
-  margin-bottom: 0.5rem; /* Space below icon */
-}
-
-.features-section .card-text { /* Space indicates descendant */
-  font-size: 0.88rem; /* Adjusted size */
-  color: #6c757d;
-  margin-top: auto; /* Push text to bottom if needed, or remove if causing issues */
-}
-
-/* --- Chart Section (Parallax Section) --- */
-/* Assuming you have a section with class 'parallax-section' or use inline styles */
-.parallax-section { /* Example if using a class */
-   background-attachment: fixed;
-   background-size: cover;
-   background-position: center;
-   padding: 6rem 0; /* Adjust padding as needed */
-}
-
-/* --- Platforms Section --- */
-/* IMPORTANT: Add className="platforms-section" to the platform <section> in Home.js */
-.platforms-section {
-  padding: 4rem 0;
-  background-color: white;
-}
-
-.platforms-section h2 {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 3rem; /* More space below title */
   color: #343a40;
 }
 
-.platforms-section .row {
-  margin-top: 1rem;
-  align-items: center; /* Vertically align icons if heights differ */
-}
-
-.platforms-section .col {
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Center icons within column */
-}
-
-.platforms-section img {
-  max-width: 80%; /* Control max width within the column */
-  max-height: 50px; /* Control max height */
-  height: auto;
-  opacity: 0.75; /* Slightly less opacity */
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.platforms-section img:hover {
-  opacity: 1;
-  transform: scale(1.1); /* Add slight scale on hover */
-}
-
-/* --- Call to Action Section (bg-primary) --- */
-.bg-primary {
-  /* background-color: #007bff !important; /* Bootstrap class handles this */
-}
-
-.bg-primary h2 {
-  font-size: 1.9rem; /* Adjusted size */
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.bg-primary p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  max-width: 750px; /* Constrain width */
+.features-section-cards .card img {
+  max-height: 50px;
+  width: auto;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1rem; /* Increased space below icon */
 }
 
-/* CTA Button (Corrected Selector) */
-.bg-primary .btn-light { /* Space indicates descendant */
-  color: #007bff;
-  background-color: white;
-  border-color: white;
-  border-radius: 50px; /* Pill shape */
-  padding: 0.9rem 2rem; /* Adjusted padding */
-  font-size: 1.1rem;    /* Adjusted size */
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+.features-section-cards .card-text {
+  font-size: 0.88rem;
+  color: #6c757d;
+  line-height: 1.5;
+  /* margin-top: auto; /* REMOVED - Let flexbox handle alignment */
 }
 
-.bg-primary .btn-light:hover {
-  background-color: #f0f0f0;
-  color: #0056b3;
-  transform: scale(1.03); /* Slight scale on hover */
+
+/* --- Profit Logo Section Cards (Vipul Shah, etc.) --- */
+/* Add className="profit-cards-section" to the section in Home.js */
+.profit-cards-section .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profit-cards-section .card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.12);
+}
+.profit-cards-section .card img {
+    transition: transform 0.3s ease;
+}
+.profit-cards-section .card:hover img {
+    transform: scale(1.05);
 }
 
-/* --- Scroll to Top Button --- */
-/* IMPORTANT: Add className="scroll-to-top-btn" to the scroll <Button> in Home.js */
-.scroll-to-top-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 45px; /* Slightly larger */
-  height: 45px;
-  display: flex; /* Already set inline by React Bootstrap */
+/* --- Wallet / Platform / Profit Cards (Blue Background Section) --- */
+/* Add className="details-cards-section" to the section in Home.js */
+.details-cards-section {
+     /* background-color: #0056b3; /* Handled by inline style in JS */
+     padding: 4rem 0;
+}
+.details-cards-section .card {
+    /* Styles for the white cards within the blue section */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.details-cards-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.3rem 0.9rem rgba(0, 0, 0, 0.15);
+}
+.details-cards-section .card-body small {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+.details-cards-section .card img {
+    margin-bottom: 0.5rem; /* Space below icons */
+}
+
+
+/* --- Platform Availability Logos Section --- */
+/* IMPORTANT: Add className="platforms-section" to the platform logo <section> in Home.js */
+.platforms-section {
+  padding: 3rem 0; /* Slightly less padding */
+  background-color: #f8f9fa; /* Match background of preceding section */
+}
+
+/* No need for h2 styles if there's no title in this specific section */
+
+.platforms-section .row {
+  /* margin-top: 1rem; /* Removed, use g-4 gap */
   align-items: center;
-  justify-content: center;
-  font-size: 1.5rem; /* Size of the icon/arrow inside */
-  cursor: pointer;
-  opacity: 0.8; /* Start slightly more visible */
-  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-  position: fixed; /* Ensure it's fixed (already set inline) */
-  bottom: 20px;    /* Adjust position (overrides inline 'm-3') */
-  right: 20px;
-  z-index: 1030;   /* Ensure it's above most content */
 }
 
-.scroll-to-top-btn:hover {
+/* Targeting the specific Col containing the logo */
+.platforms-section .platform-logo img {
+  max-width: 100%; /* Allow image to scale within column */
+  max-height: 45px; /* Control max height */
+  height: auto;
+  opacity: 0.8; /* Start slightly transparent */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  filter: grayscale(50%); /* Optional: start grayscale */
+}
+
+.platforms-section .platform-logo:hover img {
   opacity: 1;
   transform: scale(1.1);
-  background-color: #0056b3; /* Darker on hover */
+  filter: grayscale(0%); /* Optional: full color on hover */
+}
+
+/* --- Payment Methods Section --- */
+/* Add className="payment-methods-section" to the section in Home.js */
+.payment-methods-section {
+    /* background-color: #0056b3; /* Handled by inline style */
+    padding: 3rem 0;
+}
+.payment-methods-section h3 {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.payment-methods-section img {
+    transition: box-shadow 0.3s ease;
+}
+.payment-methods-section img:hover {
+     box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Subtle glow effect */
+}
+
+
+/* --- License Section --- */
+/* Add className="license-section" to the section in Home.js */
+.license-section {
+     /* background-color: #f8f9fa; /* Handled by bg-light */
+     padding: 4rem 0;
+}
+.license-section .btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.license-section .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 
 /* --- Mobile Responsiveness --- */
-@media (max-width: 991.98px) { /* Adjust breakpoint if needed (e.g., for md) */
-   /* Add styles for tablets if necessary */
-   .features-section .card-title {
-     font-size: 1.1rem;
-   }
-    .features-section .card-text {
+@media (max-width: 991.98px) { /* lg breakpoint */
+  .hero-section h1 {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+  }
+  .hero-section p.lead {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+  }
+  .features-section-cards .card-title {
+     font-size: 1.05rem;
+  }
+  .features-section-cards .card-text {
      font-size: 0.85rem;
-   }
+  }
 }
 
 @media (max-width: 767.98px) { /* md breakpoint */
   .hero-section {
-    height: auto;
-    padding: 6rem 1rem; /* Adjust padding */
+    min-height: auto; /* Allow natural height */
+    padding: 5rem 1rem;
+    background-attachment: scroll; /* Disable fixed attachment on mobile */
   }
 
-  .hero-section h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-section p.lead {
-    font-size: 1.1rem;
-  }
-
-  /* Target the specific flex containers for buttons */
-  .hero-section .d-flex.gap-3,
-  .hero-section .d-flex.gap-2 {
-    flex-direction: column;
-    align-items: center; /* Center buttons when stacked */
-    width: 100%;
-    max-width: 300px; /* Limit button stack width */
-    margin-left: auto;
-    margin-right: auto;
-  }
-   .hero-section .d-flex.gap-3 .btn,
-   .hero-section .d-flex.gap-2 .btn {
-       width: 100%; /* Make stacked buttons full width */
+  /* Center align hero text content on mobile */
+   .hero-section .text-md-start {
+       text-align: center !important;
    }
+   /* Center hero buttons when stacked */
+    .hero-section .justify-content-md-start {
+        justify-content: center !important;
+    }
+   /* Stack hero buttons */
+    .hero-section .d-flex.gap-3 {
+        flex-direction: column;
+        align-items: center; /* Center buttons */
+        width: 100%;
+        max-width: 280px; /* Limit button stack width */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-section .d-flex.gap-3 .btn {
+        width: 100%; /* Make stacked buttons full width */
+        margin: 0.4rem 0; /* Adjust margin for stacked buttons */
+    }
 
-  .features-section {
+  .features-section-cards {
       padding: 3rem 0;
   }
 
-  .platforms-section h2 {
-      margin-bottom: 2rem;
-  }
-
   .platforms-section img {
-      max-height: 40px; /* Smaller icons on mobile */
-      opacity: 1; /* Ensure visibility */
+      max-height: 40px;
+      opacity: 1; /* Full opacity on mobile */
+      filter: grayscale(0%); /* Full color on mobile */
   }
 
-  .bg-primary h2 {
-    font-size: 1.75rem;
-  }
+   /* Stack columns and center content in sections like "Fresher to Trading" */
+    section .row.align-items-center > .col-md-6 {
+        text-align: center; /* Center text in columns */
+    }
+     section .row.align-items-center > .col-md-6 .d-flex {
+         justify-content: center; /* Center buttons within the column */
+     }
+     section .row.align-items-center > .col-md-6 img.img-fluid {
+         margin-bottom: 2rem; /* Add space below image when stacked */
+         max-width: 80%; /* Allow image to be reasonably large */
+         margin-left: auto;
+         margin-right: auto;
+         display: block;
+     }
+      /* Center profit card content */
+      .profit-cards-section .card {
+        flex-direction: column !important;
+        text-align: center;
+      }
+       .profit-cards-section .card img {
+        margin-right: 0 !important;
+        margin-bottom: 1rem;
+      }
+      /* Adjust details cards (Wallet/Platform/Profit) layout */
+      .details-cards-section .card {
+          margin-bottom: 1.5rem; /* Add space between stacked cards */
+      }
 
-  .bg-primary p {
-    font-size: 1rem;
-  }
-
-  .bg-primary .btn-light {
-    font-size: 1rem;
-    padding: 0.8rem 1.6rem;
-  }
-
-  /* Center align detailed feature sections */
-  .py-5 .row > div[class*="col-"] { /* Target columns more broadly */
-      text-align: center !important;
-  }
-  .py-5 .row img.img-fluid {
-      margin-bottom: 1.5rem; /* Space below images when stacked */
-      max-width: 150px !important; /* Control image size */
-  }
+      /* Adjust License section button layout */
+       .license-section .d-flex.flex-wrap {
+            justify-content: center;
+       }
 }
 
 @media (max-width: 575.98px) { /* sm breakpoint */
   .hero-section h1 {
-    font-size: 2.1rem;
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
   }
-   .hero-section p.lead {
+  .hero-section p.lead {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+  }
+  .features-section-cards .card-title {
     font-size: 1rem;
   }
-  .features-section .card-title {
-    font-size: 1rem;
-  }
-  .features-section .card-text {
+  .features-section-cards .card-text {
     font-size: 0.8rem;
   }
+  .btn-orange {
+      padding: 0.7rem 1.2rem; /* Adjust padding for smaller buttons */
+      font-size: 0.9rem;
+  }
+   /* Further adjust section padding */
+    .hero-section { padding: 4rem 1rem; }
+    .features-section-cards, .license-section, .details-cards-section { padding: 2.5rem 0; }
+    .platforms-section, .payment-methods-section { padding: 2rem 0; }
 }

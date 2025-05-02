@@ -1,100 +1,100 @@
-/* Navbar background and text color */
-.custom-navbar {
-  background-color: #0050a0 !important; /* MoneyPlantFX blue */
+/* Top row */
+.top-navbar {
+  background-color: white;
 }
 
-/* Navbar logo */
+/* Logo */
 .navbar-logo {
   height: 50px;
 }
 
-/* Navbar link styles */
+/* Bottom blue nav row */
+.custom-navbar {
+  background-color: #0050a0 !important;
+  padding: 0.5rem 0;
+}
+
+/* Nav link styles */
 .custom-nav-link,
 .custom-dropdown .nav-link,
 .custom-dropdown .dropdown-toggle {
   color: #ffffff !important;
   font-weight: 500;
   padding: 10px 16px;
-  transition: color 0.3s ease-in-out; /* Smooth transition */
+  transition: color 0.3s ease-in-out;
 }
 
-/* Hover effect for navbar links */
 .custom-nav-link:hover,
 .custom-dropdown:hover .dropdown-toggle {
-  color: #ffa500 !important; /* Orange hover */
+  color: #ffa500 !important;
 }
 
-/* Active link highlighting */
 .custom-nav-link.active,
 .custom-dropdown .nav-link.active {
-  color: #ffa500 !important; /* Orange active link */
-  font-weight: 600; /* Slightly bolder font for active link */
+  color: #ffa500 !important;
+  font-weight: 600;
 }
 
-/* Dropdown menu styles */
+/* Dropdown styling */
 .custom-dropdown .dropdown-menu {
-  background-color: #0050a0; /* Match navbar background */
+  background-color: #0050a0;
   border: none;
   margin-top: 0;
+  z-index: 9999;
 }
 
-/* Dropdown item styles */
 .custom-dropdown .dropdown-menu .dropdown-item {
   color: #ffffff;
   font-weight: 500;
   padding: 10px 20px;
-  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* Hover effect for dropdown items */
 .custom-dropdown .dropdown-menu .dropdown-item:hover {
-  background-color: #003c7d; /* Slightly darker blue */
-  color: #ffa500; /* Orange hover for dropdown items */
+  background-color: #003c7d;
+  color: #ffa500;
 }
 
-/* Navbar button styles */
+/* Buttons */
 .navbar-button {
   font-weight: 600;
   border-radius: 30px;
   padding: 8px 18px;
-  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* Account button specific styles */
 .navbar-button-account {
-  background-color: #ffa500;
+  background-color: #fc6716; /* Dark orange */
   border: none;
   color: #000;
 }
-
 .navbar-button-account:hover {
-  background-color: #e69500;
+  background-color: #0050a0 ;
   color: #fff;
 }
 
-/* Web Terminal button specific styles */
 .navbar-button-webterminal {
-  background-color: #ffa500;
+  background-color: #fc6716; /* Dark orange */
   border: none;
   color: #000;
 }
-
 .navbar-button-webterminal:hover {
-  background-color: #e69500;
+  background-color: #0050a0 ;
   color: #fff;
 }
 
-/* Running text (marquee) section */
+/* Marquee section */
 .running-text {
-  background-color: #ffa500;
+  background-color: #fc6716; /* Dark orange */
   font-size: 14px;
 }
 
-/* Enable dropdown on hover */
+/* Hover dropdowns */
 .custom-dropdown:hover .dropdown-menu {
   display: block;
-  margin-top: 0; /* Fix gap */
+  margin-top: 0;
 }
+
 /* Scrolling text animation */
 .scrolling-text {
   display: inline-block;
@@ -109,5 +109,12 @@
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .running-text {
+    font-size: 12px;
   }
 }
