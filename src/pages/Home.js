@@ -32,8 +32,20 @@ const Home = () => {
   return (
     // Use a React.Fragment to avoid adding an extra node to the DOM
     <>
-      {/* Hero Section */}
-      <section className="hero-section d-flex align-items-center bg-primary text-white py-5">
+    
+      
+     {/* Hero Section - Updated with Video Background */}
+     <section className="hero-section d-flex align-items-center text-white py-5"> {/* Removed bg-primary if video covers all */}
+
+{/* Background Video Iframe */}
+<iframe
+    className="hero-background-video" // Class for CSS targeting
+    src={"https://player.vimeo.com/video/980575359?muted=1&autoplay=1&loop=1&background=1&app_id=122963"}
+    title="Abstract background video" // Accessibility title
+    frameBorder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowFullScreen
+></iframe>
         <Container>
           <Row className="align-items-center gy-4"> {/* Added gy-4 for vertical gap on small screens */}
             {/* Text & Buttons - Left Side */}
@@ -80,7 +92,7 @@ const Home = () => {
       <section className="py-5 bg-light text-center">
         <Container>
           {/* Main Heading */}
-          <h2 className="fw-bold text-primary mb-5" data-aos="fade-up">YOU TRADE IT. WE HAVE IT.</h2>
+          <h2 className="fw-bold text-primary mb-5" data-aos="fade-up" color='blue'>YOU TRADE IT. WE HAVE IT.</h2>
 
           {/* Images + Text Boxes */}
           <Row className="justify-content-center g-4"> {/* Added g-4 for gap */}
@@ -119,7 +131,9 @@ const Home = () => {
      {/* REFACTOR OPPORTUNITY: Map over an array of feature data */}
      <section className="features-section py-5 bg-white"> {/* Changed background for contrast */}
         <Container>
+       
           <Row className="text-center g-4">
+          <h2 className="fw-bold text-primary mb-5" data-aos="fade-up">YOU TRADE IT. WE HAVE IT.</h2>
              {/* Note: The [1] likely refers to footnotes on the original site. Decide how to handle or remove. */}
              {/* Feature Card 1 */}
             <Col md={3} sm={6} data-aos="fade-up" data-aos-delay={0}>

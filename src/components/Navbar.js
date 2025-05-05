@@ -34,9 +34,9 @@ const Navbar = () => {
             <Col xs={6} className="d-flex justify-content-end gap-2">
               <Button
                 variant="dark"
-                className="navbar-button navbar-button-account"
+                className="navbar-button navbar-button-login"
               >
-                Account
+                Login
               </Button>
               <Button
                 variant="warning"

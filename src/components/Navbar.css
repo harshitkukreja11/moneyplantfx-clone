@@ -37,14 +37,15 @@
 
 /* Dropdown styling */
 .custom-dropdown .dropdown-menu {
-  background-color: #0050a0;
+  background-color: white;
   border: none;
   margin-top: 0;
   z-index: 9999;
+
 }
 
 .custom-dropdown .dropdown-menu .dropdown-item {
-  color: #ffffff;
+  color: black;
   font-weight: 500;
   padding: 10px 20px;
   transition: background-color 0.3s ease-in-out;
@@ -52,23 +53,29 @@
 
 .custom-dropdown .dropdown-menu .dropdown-item:hover {
   background-color: #003c7d;
-  color: #ffa500;
+  color: white;
 }
 
 /* Buttons */
 .navbar-button {
-  font-weight: 600;
-  border-radius: 30px;
-  padding: 8px 18px;
-  transition: background-color 0.3s ease-in-out;
+  font-family: "Montserrat", "sans-serif";
+  font-size: "16px";
+  font-style: "normal";
+  font-weight: "400";
+  transition: 'background-color' 0.3s 'ease-in-out';
 }
 
-.navbar-button-account {
+.navbar-button-login {
+  font-family: "Montserrat", "sans-serif";
+  font-size: "16px";
+  font-style: "normal";
+  font-weight: "400";
   background-color: #fc6716; /* Dark orange */
-  border: none;
-  color: #000;
+  color: white;
+  border: 1px solid black;
+  
 }
-.navbar-button-account:hover {
+.navbar-button-login:hover {
   background-color: #0050a0 ;
   color: #fff;
 }
@@ -76,7 +83,8 @@
 .navbar-button-webterminal {
   background-color: #fc6716; /* Dark orange */
   border: none;
-  color: #000;
+  color: white;
+  border: 1px solid black;
 }
 .navbar-button-webterminal:hover {
   background-color: #0050a0 ;

@@ -5,19 +5,29 @@
 
 /* --- Hero Section --- */
 .hero-section {
-  background-image: url('https:\/\/vimeo.com\/980575359&quot;'); /* Define background image */
-  background-size: cover;
-  background-position: center center;
-  min-height: 80vh; /* Use min-height instead of height for flexibility */
-  height: auto; /* Allow content to define height if needed */
+  height: 100vh;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center; /* Default text-align, overridden by Bootstrap cols */
-  background-attachment: fixed; /* Parallax effect - Test on mobile! */
-  position: relative;
-  overflow: hidden;
+  text-align: center;
+  position: relative; /* CRITICAL: For absolute positioning of children */
+  overflow: hidden; /* CRITICAL: To contain the video iframe */
+  background-color: #003d80;
+
+}
+.hero-background-video {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  width: 100vw; /* Cover full viewport width */
+  height: 56.25vw; /* 16:9 aspect ratio height based on width */
+  min-height: 100vh; /* Ensure it covers viewport height */
+  min-width: 177.77vh; /* 16:9 aspect ratio width based on height */
+  transform: translate(-50%, -50%); /* Center using transform */
+  z-index: 1; /* Behind overlay and content */
+  pointer-events: none; /* Allows clicking content on top */
+  object-fit: cover; /* Optional: Helps ensure video covers area */
 }
 
 /* Optional: Add a dark overlay for better text readability */
@@ -64,37 +74,22 @@
   padding: 0.75rem 1.5rem; /* Consistent padding */
   font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive font size */
   font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
   margin: 0.5rem; /* Add some margin for spacing */
 }
 
 /* Specific hover for Login button */
 .hero-section .btn-light {
-  color: #0056b3; /* Match the blue theme */
-  background-color: white;
-  border-color: white;
+  color: white; /* Match the blue theme */
+  background-color: #fc6716;
 }
 
-.hero-section .btn-light:hover {
-  background-color: #f0f0f0; /* Slightly off-white */
-  color: #003d80; /* Darker blue */
-  border-color: #f0f0f0;
-  transform: translateY(-2px); /* Subtle lift */
-}
 
 /* Specific hover for Sign Up button */
 .hero-section .btn-outline-light {
   color: white;
-  border-color: white;
-  background-color: transparent; /* Ensure transparent */
+  background-color:#003c7d; 
 }
 
-.hero-section .btn-outline-light:hover {
-  background-color: white;
-  color: #0056b3; /* Match the blue theme */
-  border-color: white;
-  transform: translateY(-2px); /* Subtle lift */
-}
 
 
 /* --- .btn-orange styling (As requested for Home.js) --- */
@@ -121,6 +116,7 @@
 /* Target the section specifically if possible (add class in JS?) or rely on structure */
 .bg-light .border.rounded.p-4 { /* Example targeting based on current structure */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #003d80;
 }
 .bg-light .border.rounded.p-4:hover {
     transform: translateY(-5px);
@@ -389,4 +385,11 @@
     .hero-section { padding: 4rem 1rem; }
     .features-section-cards, .license-section, .details-cards-section { padding: 2.5rem 0; }
     .platforms-section, .payment-methods-section { padding: 2rem 0; }
+}
+@media (max-width: 767.98px) { /* md breakpoint */
+  .hero-section {
+    height: auto; /* Allow height to adjust to content */
+    min-height: 80vh; /* Set a minimum height */
+    padding: 6rem 1rem;
+  }
 }
