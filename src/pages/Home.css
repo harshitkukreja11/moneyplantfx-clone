@@ -143,12 +143,7 @@
   /* background-color: #f8f9fa; /* Handled by bg-white in JS now */
   padding: 4rem 0;
 }
-.features-section .card-title{
-  margin-bottom: 6px;
-  color: var(--e-global-color-secondary);
-  font-family: "Roboto", Sans-serif;
-  font-weight: 400;
-}
+
 .features-section-cards .card {
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
