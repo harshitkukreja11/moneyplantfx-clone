@@ -1,9 +1,6 @@
 /* src/index.css */
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import "swiper/css";
+@import "swiper/css/autoplay";
+
 /* You can add any other global styles here */
-/* src/components/Navbar.css or in your global stylesheet */
-.navbar-nav .active {
-    font-weight: bold;
-    color: #007bff; /* You can change this to any color you prefer */
-  }
-  

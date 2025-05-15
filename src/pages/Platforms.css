@@ -1,29 +1,22 @@
 /* Hero Section */
 .hero-section {
   background-color: #f8f9fa; 
-  padding: 80px 0;
+  padding: 10px 0;
   text-align: center;
 }
 
 /* Feature Card */
 .feature-card {
-  background-color: #fff;
-  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(239, 185, 185, 0.1);
-  transition: all 0.3s ease;
+  
 }
 
-.feature-card:hover {
-  box-shadow: 0 6px 15px rgba(232, 211, 211, 0.2);
-}
+
 
 .feature-img {
-  height: 150px;
+  height: 100px;
   object-fit: contain;
-  border-radius: 8px;
-  background-color: #f1f1f1;
-  padding: 10px;
+  padding: 1px;
 }
 
 /* Call to Action Section */

@@ -8,35 +8,25 @@
   /* The py-5 class in React component adds padding */
 }
 
-/* Footer logo */
-.footer-logo-img {
-  max-width: 180px; /* Adjust max-width as needed for logo size */
-  height: auto;     /* Maintain aspect ratio */
-  margin-bottom: 1rem; /* Spacing below logo */
-}
-
-/* Footer description */
-.footer-description {
-  font-size: 0.9rem; /* Slightly smaller font size */
-  color: #ccc;     /* Muted text color for description */
-  margin-bottom: 1rem; /* Spacing below description */
-}
 
 /* Footer heading (for link columns) */
 .footer-heading {
-  font-size: 1rem;     /* Adjust size if needed */
-  font-weight: bold;
-  margin-bottom: 1rem; /* Spacing below heading */
-  color: #fff;         /* Ensure heading is clearly visible */
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 23px; 
+  font-size: 28px;      /* Ensure heading is clearly visible */
 }
 
 /* Footer links */
 .footer-links {
-  padding-left: 0; /* Remove default padding if list-unstyled isn't enough */
+  padding-bottom: 10px !important;
+  color: white;
+  font-weight: normal;
+  font-size: 13px;
 }
 
 .footer-links li {
-   margin-bottom: 0.5rem; /* Spacing between links */
+   margin-bottom: 0.1rem; /* Spacing between links */
 }
 
 .footer-links a {
@@ -73,15 +63,13 @@
 /* Risk warnings and legal text styling */
 /* Use the .small class provided by Bootstrap or refine it */
 .footer .small { /* Targeting .small specifically within .footer */
-    font-size: 0.75rem; /* Make legal text noticeably smaller */
-    color: #bbb;      /* Muted color for legal text */
-    line-height: 1.4;  /* Adjust line spacing for readability */
-    margin-bottom: 0.5rem; /* Consistent spacing between paragraphs */
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #8a8a8a;
+  margin-bottom: 15px;
 }
 
-.footer .small strong {
-    color: #ddd; /* Make bolded parts slightly stand out */
-}
 
 /* Separator line (optional, using the <hr> in the React code) */
 .footer hr {
@@ -90,15 +78,40 @@
 
 /* Footer bottom text (copyright) */
 .footer-bottom {
-  /* pt-4 class in React adds top padding */
-  margin-top: 1rem; /* Add margin above copyright if <hr> isn't used */
+  margin-bottom: 0;
+  color: #d6d6d6;
+  font-size: 14px;
+
 }
 
 .footer-bottom p {
-  font-size: 0.8rem; /* Smaller font size for copyright */
-  color: #aaa;     /* Muted color */
-  margin-bottom: 0; /* Remove default paragraph margin */
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #8a8a8a;
+  margin-bottom: 15px;
 }
+.social-icon {
+  background-color: #295c92; /* Bootstrap primary blue */
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+  color: #fff;
+}
+
+
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 767.98px) { /* Target screens smaller than Bootstrap md breakpoint */

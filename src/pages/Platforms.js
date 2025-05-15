@@ -8,11 +8,11 @@ const Platforms = () => {
     <>
       {/* Hero Section with white background */}
       <div className="py-5 bg-white">
-        <Container className="text-center text-dark py-5">
-          <h1 className="display-4 fw-bold mb-4">
-             An Ultimate Solution for Your Online Trading
+        <Container className="text-center text-dark py-1">
+          <h1 className="display-8  mb-3" style={{ color: '#0050a0' }}>
+             AN ULTIMATE SOLUTION<br></br><b>FOR YOUR ONLINE TRADING</b>
           </h1>
-          <p className="lead mb-4">
+          <p className=" mb-1 fs-6" style={{color: "#8a8a8a"}}>
           MetaTrader 5 trading platform is the best choice for the modern trader. Successful trading on financial markets begins with a comfortable and multi-functional trading platform. It offering outstanding trading possibilities and technical analysis tools. All-in-one platform for trading Forex, Stocks and Futures. Moneyplant allows you to enjoy the freedom of movement to the full extent
           </p>
       
@@ -20,71 +20,66 @@ const Platforms = () => {
       </div>
 
       {/* Features Section */}
-      <div className="bg-light py-5">
+      <div className=" py-0">
         <Container>
-          <h2 className="text-center fw-bold text-primary mb-5">What Does MetaTrader 5 Offer?</h2>
-          <Row className="g-4">
+          <h2 className="text-center fw-bold  mb-0" style={{ color: '#0050a0' }}>WHAT DOES THE METATRADER 5 OFFER?</h2>
+          <Row className="g-0">
             {[
               {
-                title: 'Technical Analysis Tools',
-                description: 'MetaTrader 5 offers a full set of tools for technical analysis and breaking financial news.',
+                description: 'A full set of technical analysis tools and alert on breaking financial news',
                 image: 'https://moneyplantfx.com/wp-content/uploads/2024/07/fullset-technical.png',
               },
               {
-                title: 'Fundamental Analysis',
-                description: 'Get market news updates and use them to predict market movements.',
+                
+                description: 'Fundamental analysis on market news',
                 image: 'https://moneyplantfx.com/wp-content/uploads/2024/07/fundamental-analysis.png',
               },
               {
-                title: 'Algorithmic Trading',
-                description: 'Powerful algorithmic trading with built-in MQL5 development toolkit.',
+                
+                description: 'Powerful algorithmic trading with built-in MQL5 development toolkit',
                 image: 'https://moneyplantfx.com/wp-content/uploads/2024/07/powerful-algorithmic.png',
               },
               {
-                title: 'Unlimited Number of Charts',
-                description: 'Open as many charts as needed for detailed market analysis.',
+                
+                description: 'An unlimited number of chart and one-minute history of quotes',
                 image: 'https://moneyplantfx.com/wp-content/uploads/2024/07/unlimited-number.png',
               },
               {
-                title: 'Advanced Alerts System',
-                description: 'Set custom alerts for important market events to never miss a trade.',
+               
+                description: 'An advanced alerts system to keep track of all important market events',
                 image: 'https://moneyplantfx.com/wp-content/uploads/2024/07/advanced-alerts.png',
               },
               {
-                title: 'Ready-to-Use Trading Apps',
+               
                 description: 'A selection of ready-to-use trading applications on the MetaTrader Market.',
                 image: 'https://moneyplantfx.com/wp-content/uploads/2024/07/selectionof-ready.png',
               },
               {
-                title: 'Easy Order Execution',
-                description: 'Easily execute and perform extensive order hedging.',
+                
+                description: 'Ability to easily execute and perform extensive order hedging',
                 image: 'https://moneyplantfx.com/wp-content/uploads/2024/07/abilityto-easily.png',
               },
               {
-                title: 'Featured Trade Signals',
-                description: '30 technical indicators, 24 analytical objects, and fully-featured trade signals.',
+               
+                description: 'Fully-featured Trade signals, 30 technical indicators, and 24 analytical objects',
                 image: 'https://moneyplantfx.com/wp-content/uploads/2024/07/featured-trade.png',
               },
             ].map((p, i) => (
               <Col md={6} lg={3} key={i}>
                 <div className="feature-card text-center">
-                  <img src={p.image} alt={p.title} className="w-100 feature-img mb-3" />
-                  <h5 className="fw-bold">{p.title}</h5>
-                  <p>{p.description}</p>
+                  <img src={p.image} alt={p.title} className="w-20 feature-img" />
+                  <p className="fw-semibold"style={{color: '#0050a0'}}>{p.description}</p>
                 </div>
               </Col>
             ))}
           </Row>
+          <p className="fw-semibold fs-5 text-center"style={{color: '#0050a0'}}>A multi-functional, modern and comfortable platform lays the pathway to successful trading on financial markets. Moneyplant MetaTrader 5 is the best choice for the modern trader!</p>
         </Container>
       </div>
 
      {/* Download Section */}
 <div style={{ backgroundColor: '#f1f1f1' }} className="text-dark py-5">
   <Container className="text-center">
-    <h2 className="fw-bold mb-4">Start Trading Today</h2>
-    <p className="lead mb-4">
-      MetaTrader 5 is available for Desktop and Mobile. Download now and start trading with the best tools!
-    </p>
     <div className="d-flex justify-content-center gap-4 flex-wrap">
       <Button variant="dark" size="lg" className="px-5 py-3">
         <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/window.png" alt="Windows" className="me-2" />

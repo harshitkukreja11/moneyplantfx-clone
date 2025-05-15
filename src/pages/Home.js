@@ -1,98 +1,158 @@
 // src/pages/Home.js
 import React, { useEffect } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Button,Col,Card,Row } from 'react-bootstrap';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // AOS styles
-import './Home.css';       // Your custom styles for this page (MAKE SURE .btn-orange IS DEFINED HERE)
-
-// Potential Refactor: Consider moving data for repetitive sections (like features, profit cards)
-// into arrays of objects and using .map() to render them.
-
-// Example:
-// const featuresData = [ {icon: '...', title: '...', text: '...', delay: 0}, ... ];
+import 'aos/dist/aos.css';
+import './Home.css';
+import LogoCarousel from '../components/LogoCarousel';
 
 const Home = () => {
   useEffect(() => {
-    // Initialize AOS on component mount
-    // `once: true` prevents animations from repeating on scroll up/down
+    // Initialize AOS animation library
     AOS.init({ duration: 1000, once: true });
-  }, []); // Correct empty dependency array ensures this runs only once
 
-  // Placeholder function for button clicks - NEEDS IMPLEMENTATION
-  // Use useNavigate() from react-router-dom or other methods for navigation/actions.
+    // Inject TradingView Ticker Tape widget
+    const script = document.createElement('script');
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js';
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+      symbols: [
+        { proName: "FOREXCOM:SPXUSD", title: "S&P 500 Index" },
+        { proName: "FOREXCOM:NSXUSD", title: "US 100 Cash CFD" },
+        { proName: "FX_IDC:EURUSD", title: "EUR to USD" },
+        { proName: "BITSTAMP:BTCUSD", title: "Bitcoin" },
+        { proName: "BITSTAMP:ETHUSD", title: "Ethereum" },
+        { proName: "BINANCE:BTCUSDT" },
+        { proName: "BINANCE:ETHUSDT" },
+        { proName: "COINBASE:ETHUSD" },
+        { proName: "CRYPTOCAP:TOTAL" },
+        { proName: "CRYPTOCAP:OTHERS" },
+        { proName: "COINBASE:DOGJ2025" }
+      ],
+      showSymbolLogo: true,
+      isTransparent: false,
+      displayMode: "regular",
+      colorTheme: "light",
+      width: "100%",
+      height: 46
+    });
+    const container = document.getElementById("ticker-tape-container");
+    if (container && !container.querySelector("script")) {
+      container.appendChild(script);
+    }
+    
+  }, []);
+  const featuresData = [
+    {
+      title: 'Lowest Spreads',
+      text: 'MoneyPlant is committed to your wealth creation, we offer the lowest spreads in the industry with 0.0 pips per EUR/USD.',
+      img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic1.png',
+      alt: 'Lowest Spreads Icon',
+    },
+    {
+      title: 'Balanced Approach',
+      text: 'With our network with Major Global banks and financial institutions your money safe and segregated for a balanced and protected future.',
+      img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic2.png',
+      alt: 'Fund Safety Icon',
+    },
+    {
+      title: 'Advanced Trading Analytics',
+      text: 'With MT5 analyzing the market like never before, our analytics and reports are here to keep a track of all your investments.',
+      img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic3.png',
+      alt: 'Trading Analytics Icon',
+    },
+    {
+      title: 'Transparency',
+      text: 'You believe in us and we believe in transparency. Our model is 100% transparent and build to deliver the best to all our traders.',
+      img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic4.png',
+      alt: 'Transparency Icon',
+    },
+    {
+      title: 'Diverse Investment Portfolio',
+      text: 'Now with a single trading account invest in all types of financial products, Crypto, Forex, Indices, Metal, Equity and more- Build an unbeatable investment portfolio with MoneyPlant',
+      img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic5.png',
+      alt: 'Portfolio Icon',
+    },
+    {
+      title: 'Invest Easy',
+      text: 'Register in 5 minutes and experience the fastest transaction online with MoneyPlant. Each financial decision you make is now just a click away from reality.',
+      img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic6.png',
+      alt: 'Easy Investment Icon',
+    },
+    {
+      title: '0% commission and charges',
+      text: 'We offer zero deposit money on your funds, with minimal to zero commission to all our traders.',
+      img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic7.png',
+      alt: 'Zero Commission Icon',
+    },
+    {
+      title: 'Multilingual Support',
+      text: 'Our 24*7 support is here to guide in your language, make informed financial decisions with our experts and experience the smoothest operations with our customer support.',
+      img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic8.png',
+      alt: 'Support Icon',
+    },
+  ];
+  
+
   const handleButtonClick = (action) => {
-    console.log(`${action} button clicked! Implement navigation or action here.`);
-    // Example navigation (requires setup with React Router):
-    // navigate('/login');
-    // Example alert:
-    // alert(`${action} button clicked!`);
+    console.log(`${action} button clicked!`);
   };
 
-
   return (
-    // Use a React.Fragment to avoid adding an extra node to the DOM
     <>
-    
-      
-     {/* Hero Section - Updated with Video Background */}
-     <section className="hero-section d-flex align-items-center text-white py-5"> {/* Removed bg-primary if video covers all */}
+     
 
-{/* Background Video Iframe */}
-<iframe
-    className="hero-background-video" // Class for CSS targeting
-    src={"https://player.vimeo.com/video/980575359?muted=1&autoplay=1&loop=1&background=1&app_id=122963"}
-    title="Abstract background video" // Accessibility title
-    frameBorder="0"
-    allow="autoplay; fullscreen; picture-in-picture"
-    allowFullScreen
-></iframe>
-        <Container>
-          <Row className="align-items-center gy-4"> {/* Added gy-4 for vertical gap on small screens */}
-            {/* Text & Buttons - Left Side */}
+      {/* Hero Section */}
+      <section className="hero-section text-white position-relative" style={{ minHeight: '90vh', overflow: 'hidden' }}>
+        {/* Background Video */}
+        <div className="video-wrapper">
+          <iframe
+            src="https://player.vimeo.com/video/980575359?muted=1&autoplay=1&loop=1&background=1"
+            title="Background Video"
+            frameBorder="0"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            className="video-iframe"
+          ></iframe>
+        </div>       
+         <Container>
+          <Row className="align-items-center gy-4">
             <Col md={6} data-aos="fade-right" className="text-center text-md-start">
               <h1 className="display-4 fw-bold">Easy Trade | Easy Money</h1>
               <p className="lead">
                 Updates 24*7 on market trends with extensive background data on every investment
               </p>
-              <div className="d-flex gap-3 justify-content-center justify-content-md-start mt-4"> {/* Increased mt */}
-                <Button
-                  variant="light" // Base Bootstrap style
-                  size="lg"       // Larger button
-                  className="fw-bold" // Bootstrap utility
-                  onClick={() => handleButtonClick('Login')}
-                >
+              <div className="d-flex gap-3 justify-content-center justify-content-md-start mt-4">
+                <Button variant="light" size="lg" className="fw-bold" onClick={() => handleButtonClick('Login')}>
                   Login
                 </Button>
-                <Button
-                  variant="outline-light" // Base Bootstrap style
-                  size="lg"               // Larger button
-                  className="fw-bold"     // Bootstrap utility
-                  onClick={() => handleButtonClick('Sign Up')}
-                >
+                <Button variant="outline-light" size="lg" className="fw-bold" onClick={() => handleButtonClick('Sign Up')}>
                   Sign Up
                 </Button>
               </div>
             </Col>
 
-            {/* Image - Right Side */}
             <Col md={6} data-aos="fade-left" className="text-center">
               <img
                 src="https://moneyplantfx.com/wp-content/uploads/2024/07/moneyplant-bg-1-1536x1093.png"
-                alt="MoneyPlantFX platform interface example" // Slightly more descriptive alt text
-                className="img-fluid rounded shadow-lg" // Added shadow-lg
-                style={{ maxHeight: '400px' }} // Inline style acceptable for unique constraint
+                alt="MoneyPlantFX platform interface example"
+                className="img-fluid rounded "
+                style={{ maxHeight: '400px' }}
               />
             </Col>
           </Row>
         </Container>
       </section>
-
+ {/* TradingView Ticker Tape Widget - Moved Below Hero Section */}
+    
+      <div id="ticker-tape-container" style={{ width: '100%' }}></div>
+      
       {/* Feature Section: YOU TRADE IT. WE HAVE IT. #1 */}
       {/* Consider moving common section styles (like py-5, bg-light) to CSS classes */}
       <section className="py-5 bg-light text-center">
         <Container>
           {/* Main Heading */}
-          <h2 className="fw-bold text-primary mb-5" data-aos="fade-up" color='blue'>YOU TRADE IT. WE HAVE IT.</h2>
+          <h2 className="fw-bold text-primary mb-5" data-aos="fade-up" >YOU TRADE IT. WE HAVE IT.</h2>
 
           {/* Images + Text Boxes */}
           <Row className="justify-content-center g-4"> {/* Added g-4 for gap */}
@@ -128,105 +188,40 @@ const Home = () => {
       </section>
 
      {/* Features Section (8 Cards) */}
-     {/* REFACTOR OPPORTUNITY: Map over an array of feature data */}
-     <section className="features-section py-5 bg-white"> {/* Changed background for contrast */}
-        <Container>
-       
-          <Row className="text-center g-4">
-          <h2 className="fw-bold text-primary mb-5" data-aos="fade-up">YOU TRADE IT. WE HAVE IT.</h2>
-             {/* Note: The [1] likely refers to footnotes on the original site. Decide how to handle or remove. */}
-             {/* Feature Card 1 */}
-            <Col md={3} sm={6} data-aos="fade-up" data-aos-delay={0}>
-                <Card className="shadow-sm border-0 h-100">
-                  <Card.Body className="d-flex flex-column p-4"> {/* Added padding */}
-                    <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic1.png" alt="Lowest Spreads Icon" className="mb-3 align-self-center" style={{ height: '50px', width: 'auto' }} />
-                    <Card.Title className="fw-bold mt-auto h5">Lowest Spreads</Card.Title> {/* Used h5 for better hierarchy */}
-                    {/* Consider removing [1] or implementing footnotes/tooltips */}
-                    <Card.Text className="text-muted small">Lowest spreads (0.0 pips per EUR/USD).[1]</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-             {/* Feature Card 2 */}
-              <Col md={3} sm={6} data-aos="fade-up" data-aos-delay={100}>
-                <Card className="shadow-sm border-0 h-100">
-                  <Card.Body className="d-flex flex-column p-4">
-                    <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic2.png" alt="Fund Safety Icon" className="mb-3 align-self-center" style={{ height: '50px', width: 'auto' }} />
-                    <Card.Title className="fw-bold mt-auto h5">Balanced Approach</Card.Title>
-                    <Card.Text className="text-muted small">Network of major global banks and financial institutions for fund safety.[1]</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            {/* Feature Card 3 */}
-              <Col md={3} sm={6} data-aos="fade-up" data-aos-delay={200}>
-                 <Card className="shadow-sm border-0 h-100">
-                   <Card.Body className="d-flex flex-column p-4">
-                     <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic3.png" alt="Trading Analytics Icon" className="mb-3 align-self-center" style={{ height: '50px', width: 'auto' }} />
-                     <Card.Title className="fw-bold mt-auto h5">Advanced Trading Analytics</Card.Title>
-                     <Card.Text className="text-muted small">Advanced trading analytics with MT5.[1]</Card.Text>
-                   </Card.Body>
-                 </Card>
-               </Col>
-            {/* Feature Card 4 */}
-               <Col md={3} sm={6} data-aos="fade-up" data-aos-delay={300}>
-                 <Card className="shadow-sm border-0 h-100">
-                   <Card.Body className="d-flex flex-column p-4">
-                     <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic4.png" alt="Transparency Icon" className="mb-3 align-self-center" style={{ height: '50px', width: 'auto' }} />
-                     <Card.Title className="fw-bold mt-auto h5">Transparency</Card.Title>
-                     <Card.Text className="text-muted small">Transparency in our model.[1]</Card.Text>
-                   </Card.Body>
-                 </Card>
-               </Col>
-            {/* Feature Card 5 */}
-               <Col md={3} sm={6} data-aos="fade-up" data-aos-delay={400}>
-                 <Card className="shadow-sm border-0 h-100">
-                   <Card.Body className="d-flex flex-column p-4">
-                     <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic5.png" alt="Portfolio Icon" className="mb-3 align-self-center" style={{ height: '50px', width: 'auto' }} />
-                     <Card.Title className="fw-bold mt-auto h5">Diverse Investment Portfolio</Card.Title>
-                     <Card.Text className="text-muted small">Diverse portfolio including crypto, Forex, indices, metals, and equities.[1]</Card.Text>
-                   </Card.Body>
-                 </Card>
-               </Col>
-            {/* Feature Card 6 */}
-               <Col md={3} sm={6} data-aos="fade-up" data-aos-delay={500}>
-                 <Card className="shadow-sm border-0 h-100">
-                   <Card.Body className="d-flex flex-column p-4">
-                     <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic6.png" alt="Easy Investment Icon" className="mb-3 align-self-center" style={{ height: '50px', width: 'auto' }} />
-                     <Card.Title className="fw-bold mt-auto h5">Invest Easy</Card.Title>
-                     <Card.Text className="text-muted small">Easy registration in 5 minutes and fast online transactions.[1]</Card.Text>
-                   </Card.Body>
-                 </Card>
-               </Col>
-            {/* Feature Card 7 */}
-               <Col md={3} sm={6} data-aos="fade-up" data-aos-delay={600}>
-                 <Card className="shadow-sm border-0 h-100">
-                   <Card.Body className="d-flex flex-column p-4">
-                     <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic7.png" alt="Zero Commission Icon" className="mb-3 align-self-center" style={{ height: '50px', width: 'auto' }} />
-                     <Card.Title className="fw-bold mt-auto h5">0% commission and charges</Card.Title>
-                     <Card.Text className="text-muted small">0% commission on deposits with minimal to zero commission for traders.[1]</Card.Text>
-                   </Card.Body>
-                 </Card>
-               </Col>
-            {/* Feature Card 8 */}
-               <Col md={3} sm={6} data-aos="fade-up" data-aos-delay={700}>
-                 <Card className="shadow-sm border-0 h-100">
-                   <Card.Body className="d-flex flex-column p-4">
-                     <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/ic8.png" alt="Support Icon" className="mb-3 align-self-center" style={{ height: '50px', width: 'auto' }} />
-                     <Card.Title className="fw-bold mt-auto h5">Multilingual Support</Card.Title>
-                     <Card.Text className="text-muted small">Multilingual 24/7 customer support.[1]</Card.Text>
-                   </Card.Body>
-                 </Card>
-               </Col>
-          </Row>
-        </Container>
-      </section>
-
+    
+  <section className="features-section py-5 bg-white">
+    <Container>
+      <h2 className="fw-bold text-primary text-center mb-5" data-aos="fade-up">YOU TRADE IT. WE HAVE IT.</h2>
+      <Row className="text-center g-4">
+        {featuresData.map((feature, index) => (
+          <Col key={index} md={3} sm={6} data-aos="fade-up" data-aos-delay={index * 100}>
+            <Card className="border-0 h-100">
+              <Card.Body className="d-flex flex-column p-4">
+                <img src={feature.img} alt={feature.alt} className="mb-3 align-self-center" style={{ height: '122px', width: 'auto' }} />
+                <Card.Title className="fw-bold mt-auto h5" style={{
+    marginBottom: '6px',
+    color: '#FF6600',
+    fontFamily: '"Roboto", Sans-serif',
+    fontWeight: 400,
+  }}>{feature.title}</Card.Title>
+                <Card.Text className="text-muted small" style={{fontfamily: '"Roboto", Sans-serif',
+    fontweight: "400",
+    lineheight: "22px",}}>{feature.text}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  </section>
+     
       {/* Animated Finger Section - Consider CSS class for background */}
       <section className="py-5 text-white" style={{ backgroundColor: '#0056b3' }}>
         <Container>
           <Row className="align-items-center gy-4"> {/* Added gy-4 */}
             {/* Text on Left */}
             <Col md={6} className="mb-4 mb-md-0" data-aos="fade-right">
-              <h2 className="fw-bold mb-4">ENTER THE FUTURE OF INVESTING!</h2>
+              <h2 className="fw-bold mb-4">ENTER THE FUTURE OF <br></br>INVESTING!</h2>
               {/* Using lead class adds slightly larger font size and line height */}
               <p className="lead">
                 Secure your future with Smart Investments. Build a financial portfolio with MoneyPlant
@@ -309,7 +304,8 @@ const Home = () => {
                   src="https://moneyplantfx.com/wp-content/uploads/2024/07/ico-1.png"
                   alt="Vipul Shah Profile"
                   // Consider using CSS classes for common avatar styles
-                  style={{ width: '70px', height: '70px', marginRight: '15px', borderRadius: '50%', objectFit: 'cover' }}
+                  style={{ width: '100px', height: '100px', marginRight: '15px', borderradius: "30px, 30px, 30px, 30px"
+                    , objectFit: 'cover' }}
                 />
                 <div>
                   <h5 className="mb-1 fw-bold">Vipul Shah</h5>
@@ -324,7 +320,7 @@ const Home = () => {
                 <img
                   src="https://moneyplantfx.com/wp-content/uploads/2024/07/ico-2.png"
                   alt="Ben Jaggers Profile"
-                   style={{ width: '70px', height: '70px', marginRight: '15px', borderRadius: '50%', objectFit: 'cover' }}
+                   style={{ width: '100px', height: '100px', marginRight: '15px', borderradius: "30px, 30px, 30px, 30px", objectFit: 'cover' }}
                  />
                 <div>
                   <h5 className="mb-1 fw-bold">Ben Jaggers</h5>
@@ -339,7 +335,7 @@ const Home = () => {
                 <img
                   src="https://moneyplantfx.com/wp-content/uploads/2024/07/ico-3.png"
                   alt="Martin Niket Profile"
-                   style={{ width: '70px', height: '70px', marginRight: '15px', borderRadius: '50%', objectFit: 'cover' }}
+                   style={{ width: '100px', height: '100px', marginRight: '15px', borderradius: "30px, 30px, 30px, 30px", objectFit: 'cover' }}
                  />
                 <div>
                   <h5 className="mb-1 fw-bold">Martin Niket</h5>
@@ -370,18 +366,27 @@ const Home = () => {
                     <p className="mt-2 mb-0 fw-bold">BASIC</p>
                     <small className="text-muted">$1000 /Equivalent</small>
                   </div>
-                  {/* Wallet Option 2 */}
-                  <div className="mb-4 flex-grow-1 d-flex flex-column align-items-center">
-                    <img src="https://moneyplantfx.com/wp-content/uploads/2024/08/star.png" alt="Standard Wallet Tier" style={{ width: '50px' }} />
-                    <p className="mt-2 mb-0 fw-bold">STANDARD</p>
-                    <small className="text-muted">$10000 /Equivalent</small>
-                  </div>
-                   {/* Wallet Option 3 */}
-                  <div className="flex-grow-1 d-flex flex-column align-items-center">
-                    <img src="https://moneyplantfx.com/wp-content/uploads/2024/08/star.png" alt="Premium Wallet Tier" style={{ width: '50px' }} />
-                    <p className="mt-2 mb-0 fw-bold">PREMIUM</p>
-                    <small className="text-muted">$25000 /Equivalent</small>
-                  </div>
+                  {/* Wallet Option 2 - STANDARD */}
+<div className="mb-4 flex-grow-1 d-flex flex-column align-items-center">
+  <div className="d-flex gap-2">
+    <img src="https://moneyplantfx.com/wp-content/uploads/2024/08/star.png" alt="Standard Wallet Tier" style={{ width: '50px' }} />
+    <img src="https://moneyplantfx.com/wp-content/uploads/2024/08/star.png" alt="Standard Wallet Tier" style={{ width: '50px' }} />
+  </div>
+  <p className="mt-2 mb-0" style={{  fontFamily: '"Roboto", Sans-serif', fontWeight: 400 }}>STANDARD</p>
+  <small className="text-muted">$10000 /Equivalent</small>
+</div>
+
+{/* Wallet Option 3 - PREMIUM */}
+<div className="flex-grow-1 d-flex flex-column align-items-center">
+  <div className="d-flex gap-2">
+    <img src="https://moneyplantfx.com/wp-content/uploads/2024/08/star.png" alt="Premium Wallet Tier" style={{ width: '50px' }} />
+    <img src="https://moneyplantfx.com/wp-content/uploads/2024/08/star.png" alt="Premium Wallet Tier" style={{ width: '50px' }} />
+    <img src="https://moneyplantfx.com/wp-content/uploads/2024/08/star.png" alt="Premium Wallet Tier" style={{ width: '50px' }} />
+  </div>
+  <p className="mt-2 mb-0" style={{ fontFamily: '"Roboto", Sans-serif', fontWeight: 400 }}>PREMIUM</p>
+  <small className="text-muted">$25000 /Equivalent</small>
+</div>
+
                 </Card.Body>
               </Card>
             </Col>
@@ -444,7 +449,8 @@ const Home = () => {
       {/* Consider CSS class for background */}
       <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
         <Container className="text-center" data-aos="fade-up">
-          <h2 className="fw-bold mb-3">BIGGER PORTFOLIO & BIGGER RETURNS</h2>
+          <h2 className="fw-bold mb-3" style={{fontfamily: '"Roboto", Sans-serif',
+    fontweight: "400",color:"#0050a0"}}>BIGGER PORTFOLIO & BIGGER RETURNS</h2>
            {/* Using lead class enhances readability for these paragraphs */}
           <p className="lead mb-3 mx-auto" style={{ maxWidth: '800px' }}>
             Now buy from a diverse range of financial products, from crypto to currency, oils to metal, we wouldn’t let you miss any opportunities!
@@ -453,7 +459,7 @@ const Home = () => {
             Our model is designed to help you accumulate wealth over time and make the best of market opportunities.
           </p>
           <p className="lead mx-auto" style={{ maxWidth: '800px' }}>
-            You can trade anytime and anywhere by downloading our software on all these platforms.
+            <b>You can trade anytime and anywhere by downloading our software on all these platforms.</b>
           </p>
         </Container>
       </section>
@@ -484,15 +490,33 @@ const Home = () => {
                       src={platform.img}
                       alt={`${platform.name} platform logo`} // More specific alt text
                       className="img-fluid mb-2"
-                      style={{ maxHeight: '40px' }} // Consistent logo height
+                      style={{ maxHeight: '103px' }} // Consistent logo height
                     />
                     {/* Optional: Add platform name text below icon */}
                     {/* <span className="small text-muted">{platform.name}</span> */}
                   </Col>
                 ))}
               </Row>
+            
+            
+            {/* TradingView Forex Cross Rates Widget */}
+<div className="tradingview-widget-container" style={{ marginTop: "2rem"}}>
+  <iframe
+    src="https://www.tradingview-widget.com/embed-widget/forex-cross-rates/#..."
+    width="100%"
+    height="400"
+    frameBorder="0"
+    allowTransparency="true"
+    scrolling="no"
+    title="Forex Cross Rates Widget"
+    style={{ border: "none", boxShadow: "0 0 15px rgba(0,0,0,0.1)" }}
+  ></iframe>
+</div>
         </Container>
       </section>
+
+
+
 
       {/* JUST 4 STEPS AWAY Section */}
       <section className="py-5 text-center bg-white"> {/* Changed background */}
@@ -508,8 +532,12 @@ const Home = () => {
            />
 
           {/* Text in between */}
-          <h2 className="fw-bold" data-aos="fade-up">JUST 4 STEPS AWAY</h2>
-          <h4 className="fw-semibold mb-4 text-secondary" data-aos="fade-up" data-aos-delay="100">FROM YOUR DREAM INVESTMENTS</h4>
+          <h2 className="fw-bold" data-aos="fade-up" style={{fontfamily: '"Roboto", Sans-serif',
+    fontsize: "45px",
+    fontweight: "400",color:"#0050a0"}}>JUST 4 STEPS AWAY</h2>
+          <h4 className="fw-bold " data-aos="fade-up" style={{fontfamily: '"Roboto", Sans-serif',
+    fontsize: "45px",
+    fontweight: "400",color:"#0050a0"}}>FROM YOUR DREAM INVESTMENTS</h4>
 
           {/* Bottom image */}
           <img
@@ -521,28 +549,14 @@ const Home = () => {
           />
         </Container>
       </section>
+     
 
       {/* Payment Methods Section */}
-      {/* Consider CSS class for background */}
-      <section className="py-5" style={{ backgroundColor: '#0056b3' }}>
-        <Container className="text-center">
-          <h3 className="text-white fw-bold mb-4" data-aos="fade-up">Secure & Convenient Payments</h3>
-          <div className="mt-4" data-aos="zoom-in">
-            <img
-              src="https://corlin.in/wp-content/uploads/2024/05/Payment.png"
-              alt="Payment Methods Accepted: Visa, Mastercard, Neteller, Skrill, Bitcoin, Ethereum, Tether" // Excellent descriptive alt
-              className="img-fluid rounded" // Added rounded
-              // Added white background and padding for better visibility of logos against the dark section background
-              style={{
-                maxWidth: '100%',
-                padding: '15px', // Add some padding around the logos
-                backgroundColor: 'white',
-                borderRadius: '8px' // Match rounded class
-              }}
-            />
-          </div>
-        </Container>
-      </section>
+      <div>
+        <LogoCarousel />
+      </div>
+    
+      
 
       {/* License Section */}
       <section className="py-5 bg-light"> {/* Added bg-light */}
@@ -550,18 +564,20 @@ const Home = () => {
           <Row className="align-items-center gy-4"> {/* Added gy-4 for vertical gap */}
             {/* Text Section */}
             <Col md={6} data-aos="fade-right">
-              <h2 className="fw-bold mb-3">Our License</h2>
+              <h2 className="fw-bold mb-3"  style={{fontfamily: '"Roboto", Sans-serif',
+    fontsize: "45px",
+    fontweight: "400",color:"#0050a0"}}>Our License</h2>
               <p className="mb-4 lead"> {/* Using lead class */}
-                Our company is authorized and regulated by the Mwali International Services Authority (“MISA”) of Island of Mwali (Moheli), Comoros Union, with license number: <strong>BFX2024047</strong>.
+                Our company is authorized and regulated by the Mwali International Services Authority (“MISA”) of Island of Mwali (Moheli), Comoros Union, with license number:BFX2024047.
               </p>
 
               {/* Buttons */}
                {/* Consider making these links (<a> tags styled as buttons) if they navigate */}
-              <div className="d-flex flex-wrap gap-3">
-                <Button variant="primary" size="lg" onClick={() => handleButtonClick('Download License')}>DOWNLOAD</Button>
+               <div className="d-flex flex-column align-items-center gap-3 mt-4">
+                <Button size="lg" style={{color:"white",backgroundColor:"#0050a0"}} onClick={() => handleButtonClick('Download License')}>DOWNLOAD OUR LICENSE</Button>
                  {/* Changed middle button to outline for visual hierarchy */}
-                <Button variant="outline-primary" size="lg" onClick={() => handleButtonClick('Lookup License')}>LOOKUP</Button>
-                <Button variant="success" size="lg" onClick={() => handleButtonClick('Verify License')}>VERIFY</Button>
+                <Button style={{color:"white",backgroundColor:"#fc6716"}}size="lg" onClick={() => handleButtonClick('Lookup License')}>LOOKUP OUR LICENSE</Button>
+                <Button style={{color:"white",backgroundColor:"#0050a0"}} size="lg" onClick={() => handleButtonClick('Verify License')}>VERIFY LICENSE</Button>
               </div>
             </Col>
 

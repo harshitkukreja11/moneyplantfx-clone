@@ -1,4 +1,3 @@
-// src/components/ScrollToTopButton.js
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 
@@ -16,9 +15,17 @@ const ScrollToTopButton = () => {
 
   return visible ? (
     <Button
-      variant="primary"
-      className="scroll-to-top-btn position-fixed shadow"
-      style={{ zIndex: 1030, bottom: '30px', right: '30px', borderRadius: '50%' }}
+      className="scroll-to-top-btn position-fixed shadow text-white"
+      style={{
+        zIndex: 1030,
+        bottom: '30px',
+        width: '50px',
+        height: '55px',
+        right: '30px',
+        borderRadius: '30%',
+        backgroundColor: '#f6732e',
+        border: 'none',
+      }}
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       aria-label="Scroll to top"
     >

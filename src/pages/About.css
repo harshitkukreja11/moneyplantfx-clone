@@ -1,42 +1,65 @@
-/* src/pages/About.css */
+/* About.css */
 
 .about-main {
-    background-color: #f8f9fa;
-    color: #333;
-  }
+  background-color: #f8f9fa; /* Standard Bootstrap light gray, often used for body or sections */
+  color: #333; /* Dark gray text color */
+  text-align: center; /* Centers text within .about-main if not overridden by children */
   
-  .about-highlighted-section {
-    background-image: url('https://cognitus.com/wp-content/uploads/2024/05/plants-with-coins-stacked-dirt-banknote-low-e1717083998480-2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 60px 30px;
-    border-radius: 0;
-    margin: 0;
-  }
-  
-  .about-highlighted-section .overlay {
-    background: none; /* Removed black overlay */
-    color: #fff;
-    padding: 0;
-    max-width: 800px;
-  }
-  
-  .key-features-title {
-    font-weight: 700;
-    font-size: 2rem;
-    color: #1c3c6b;
-    margin-top: 60px;
-  }
-  
-  .key-feature p {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #333;
-  }
-  
+}
+
+.about-highlighted-section {
+  /* Background image and its properties */
+  background-image: url('https://cognitus.com/wp-content/uploads/2024/05/plants-with-coins-stacked-dirt-banknote-low-e1717083998480-2.jpg');
+  background-size: cover;     /* Ensures the image covers the section */
+  background-position: center;/* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling of the image */
+
+  width: 100%;                /* Full width */
+  min-height: 500px;          /* Minimum height for the section */
+
+  /* Flexbox properties:
+     - display: flex and align-items: center match the Bootstrap d-flex and align-items-center classes.
+     - justify-content: flex-start will take precedence over any Bootstrap justify-content-* class on this element.
+       The JSX for this element now omits justify-content-* to allow this CSS rule to apply. */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Content within this section will align to the start (left) */
+
+  padding: 60px 30px;         /* Padding for the section */
+  border-radius: 0;           /* No rounded corners */
+  margin: 0;                  /* No margin */
+  /* text-white Bootstrap class is used in JSX for text color here */
+}
+
+.about-highlighted-section .overlay {
+  /* Overlay background:
+     - background: none; means this div itself won't have a colored background layer.
+       The Bootstrap classes bg-dark bg-opacity-50 were removed from the JSX for the overlay div.
+       Text will appear directly on the .about-highlighted-section's background image. */
+  background: none;
+
+  color: #fff;                /* Text color for content inside the overlay div (e.g., "About Us" heading) */
+
+  /* Overlay padding:
+     - padding: 0; will override any Bootstrap padding utilities like px-4 if they were on the overlay div.
+       The px-4 class was removed from the JSX for the overlay div to honor this. */
+  padding: 0;
+
+  max-width: 800px;           /* Constrains the width of the content within the overlay area */
+
+  /* The overlay div in JSX uses Bootstrap classes for positioning (position-absolute, top-0, etc.)
+     and for centering its direct children (d-flex, flex-column, align-items-center, justify-content-center, text-center). */
+}
+
+.key-features-title {
+  font-weight: 700;           /* Bold font weight */
+  font-size: 2rem;            /* Font size for the key features title */
+  color: #0050a0;             /* Dark blue color */
+  margin-top: 60px;           /* Margin above the title */
+}
+
+.key-feature p {
+  font-size: 1.1rem;          /* Font size for paragraph text under key feature icons */
+  font-weight: 500;           /* Medium font weight */
+  color: #333;                /* Dark gray text color */
+}
