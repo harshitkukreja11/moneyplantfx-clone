@@ -4,23 +4,23 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './About.css';
 
+
+
 const About = () => {
-  useEffect(() => {
+   useEffect(() => {
     AOS.init({ duration: 1200 });
   }, []);
-
+  
   return (
     <div className="about-main">
-      <div className="about-highlighted-section  d-flex align-items-center text-white">
-        <div className="overlay position-absolute top-0 start-0 end-0 bottom-0 d-flex flex-column align-items-center justify-content-center text-center"style={{paddingLeft:"500px",paddingTop:"200px"}}>
-          <h1 className="fw-bolder mb-3 fs-1" >About Us</h1>
-          <p className="lead fw-semibold">
-            <a href="/" className="text-white text-decoration-none">Home</a>&nbsp;•&nbsp;About Us
-          </p>
+      {/* Header Section */}
+      <div className="about-highlighted-section">
+        <div className="overlay">
+          <h1 className="text-center fw-bold mb-3 fs-1">About us</h1>
+          <h3 className="text-center fw-semibold mb-3">Home • About us</h3>
         </div>
       </div>
-
-      <Container className="mt-5">
+<Container className="mt-5">
         <h3 className="text-center key-features-title mb-4" data-aos="zoom-in">WHY CHOOSE <b>MONEYPLANT?</b></h3>
         <p>
         We have a well developed and diverse set of offerings that will enable you to choose your own financial instruments according to your trading preferences. We provide customized trading journeys and help you figure out the trading platform that would suit you the best according to your funding methods.
