@@ -26,7 +26,7 @@ const StickyFooterIcons = () => {
           href="https://wa.me/919876543210"
           target="_blank"
           rel="noopener noreferrer"
-          className="d-flex flex-column align-items-center text-white bg-success rounded-circle shadow"
+          className="d-flex flex-column align-items-center text-white bg-success rounded  shadow"
           style={{ width: '50px', height: '50px', justifyContent: 'center', textDecoration: 'none' }}
         >
           <FaWhatsapp size={22} />
@@ -40,11 +40,22 @@ const StickyFooterIcons = () => {
           href="https://t.me/YourTelegramUsername"
           target="_blank"
           rel="noopener noreferrer"
-          className="d-flex flex-column align-items-center text-white bg-primary rounded-circle shadow"
+          className="d-flex flex-column align-items-center text-white rounded bg-primary shadow"
           style={{ width: '50px', height: '50px', justifyContent: 'center', textDecoration: 'none' }}
         >
           <FaTelegramPlane size={22} />
           <small style={{ fontSize: '10px' }}>Telegram</small>
+        </a>
+      </OverlayTrigger>
+      {/* Sign up */}
+      <OverlayTrigger placement="top" overlay={<Tooltip>Sign up to account</Tooltip>}>
+        <a
+          href="/login"
+          className="d-flex flex-column align-items-center text-white  rounded shadow"
+          style={{ width: '50px', height: '50px', justifyContent: 'center', textDecoration: 'none',backgroundColor: "#fc6716" }}
+        >
+          <FaUserCircle size={22} />
+          <small style={{ fontSize: '10px' }}>Sign up</small>
         </a>
       </OverlayTrigger>
 
@@ -52,13 +63,14 @@ const StickyFooterIcons = () => {
       <OverlayTrigger placement="top" overlay={<Tooltip>Login to Account</Tooltip>}>
         <a
           href="/login"
-          className="d-flex flex-column align-items-center text-dark bg-warning rounded-circle shadow"
-          style={{ width: '50px', height: '50px', justifyContent: 'center', textDecoration: 'none' }}
+          className="d-flex flex-column align-items-center text-white rounded shadow "
+          style={{ width: '50px', height: '50px', justifyContent: 'center', textDecoration: 'none', backgroundColor: "#0050a0" }}
         >
           <FaUserCircle size={22} />
           <small style={{ fontSize: '10px' }}>Login</small>
         </a>
       </OverlayTrigger>
+      
     </div>
   );
 };

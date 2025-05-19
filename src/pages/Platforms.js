@@ -1,15 +1,25 @@
 // src/pages/Platforms.js
-import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import React, { useEffect } from 'react'; // Import useEffect
+import { Container, Row, Col,Button } from 'react-bootstrap';
+import AOS from 'aos'; // Import AOS library
+import 'aos/dist/aos.css'; // Import AOS styles
 import './Platforms.css';
 
 const Platforms = () => {
+   useEffect(() => {
+        AOS.init({
+          duration: 1000, // values from 0 to 3000, with step 50ms
+          once: false, // whether animation should happen only once - while scrolling down
+          });
+      // Optional: Refresh AOS on component updates if content changes dynamically
+      // AOS.refresh();
+    }, []);
   return (
     <>
       {/* Hero Section with white background */}
       <div className="py-5 bg-white">
         <Container className="text-center text-dark py-1">
-          <h1 className="display-8  mb-3" style={{ color: '#0050a0' }}>
+          <h1 className="display-8  mb-3"data-aos="fade-down" style={{ color: '#0050a0' }}>
              AN ULTIMATE SOLUTION<br></br><b>FOR YOUR ONLINE TRADING</b>
           </h1>
           <p className=" mb-1 fs-6" style={{color: "#8a8a8a"}}>
@@ -22,7 +32,7 @@ const Platforms = () => {
       {/* Features Section */}
       <div className=" py-0">
         <Container>
-          <h2 className="text-center fw-bold  mb-0" style={{ color: '#0050a0' }}>WHAT DOES THE METATRADER 5 OFFER?</h2>
+          <h2 className="text-center fw-bold  mb-0"data-aos="fade-down" style={{ color: '#0050a0' }}>WHAT DOES THE METATRADER 5 OFFER?</h2>
           <Row className="g-0">
             {[
               {
@@ -73,25 +83,40 @@ const Platforms = () => {
               </Col>
             ))}
           </Row>
-          <p className="fw-semibold fs-5 text-center"style={{color: '#0050a0'}}>A multi-functional, modern and comfortable platform lays the pathway to successful trading on financial markets. Moneyplant MetaTrader 5 is the best choice for the modern trader!</p>
+          <p className="fw-semibold fs-5 text-center"data-aos="fade-down"style={{color: '#0050a0'}}>A multi-functional, modern and comfortable platform lays the pathway to successful trading on financial markets. Moneyplant MetaTrader 5 is the best choice for the modern trader!</p>
         </Container>
       </div>
 
-     {/* Download Section */}
-<div style={{ backgroundColor: '#f1f1f1' }} className="text-dark py-5">
+ {/* Download Section */}
+{/* Download Section */}
+<div className="py-5">
   <Container className="text-center">
-    <div className="d-flex justify-content-center gap-4 flex-wrap">
-      <Button variant="dark" size="lg" className="px-5 py-3">
+    <div className="d-flex justify-content-center gap-4 flex-nowrap">
+      <Button
+        size="lg"
+        className="px-5 py-3"
+        style={{ backgroundColor: '#EEEEEE', border: 'none',height:"280px",borderRadius:"4%" }}
+      >
+        <h4 style={{ color: '#0050a0' }}>DOWNLOAD Moneyplant FOR DESKTOP</h4>
+        <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/ios-1.png" alt="iOS" className="me-2" />
         <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/window.png" alt="Windows" className="me-2" />
-        Download for Desktop
+        <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/ubuntu.png" alt="Ubuntu" className="me-2" />
       </Button>
-      <Button variant="outline-dark" size="lg" className="px-5 py-3">
-        <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/ubuntu.png" alt="Phone" className="me-2" />
-        Download for Phone
+
+      <Button
+        size="lg"
+        className="px-5 py-3"
+        style={{ backgroundColor: '#EEEEEE', border: 'none',borderRadius:"4%"  }}
+      >
+        <h4 style={{ color: '#0050a0' }}>DOWNLOAD Moneyplant FOR PHONE</h4>
+        <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/play-store.png" alt="Play Store" className="me-2" />
+        <img src="https://moneyplantfx.com/wp-content/uploads/2024/07/android.png" alt="Android" className="me-2" />
       </Button>
     </div>
   </Container>
 </div>
+
+
 
 
       

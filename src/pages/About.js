@@ -11,11 +11,11 @@ const About = () => {
 
   return (
     <div className="about-main">
-      <div className="about-highlighted-section position-relative d-flex align-items-center text-white">
-        <div className="overlay position-absolute top-0 start-0 end-0 bottom-0 d-flex flex-column align-items-center justify-content-center text-center">
-          <h2 className="fw-bolder mb-3 fs-9">About Us</h2>
-          <p className="lead fw-bold">
-            <a href="/" className="text-white text-decoration-none">Home</a>&nbsp;/&nbsp;About Us
+      <div className="about-highlighted-section  d-flex align-items-center text-white">
+        <div className="overlay position-absolute top-0 start-0 end-0 bottom-0 d-flex flex-column align-items-center justify-content-center text-center"style={{paddingLeft:"500px",paddingTop:"200px"}}>
+          <h1 className="fw-bolder mb-3 fs-1" >About Us</h1>
+          <p className="lead fw-semibold">
+            <a href="/" className="text-white text-decoration-none">Home</a>&nbsp;•&nbsp;About Us
           </p>
         </div>
       </div>

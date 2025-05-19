@@ -107,13 +107,13 @@ const Home = () => {
         {/* Background Video */}
         <div className="video-wrapper">
           <iframe
-            src="https://player.vimeo.com/video/980575359?muted=1&autoplay=1&loop=1&background=1"
-            title="Background Video"
-            frameBorder="0"
-            allow="autoplay; fullscreen"
-            allowFullScreen
-            className="video-iframe"
-          ></iframe>
+  src="https://player.vimeo.com/video/980575359?muted=1&autoplay=1&loop=1&background=1"
+  title="Background Video"
+  allow="autoplay; fullscreen"
+  className="video-iframe"
+  style={{ border: 'none' }}
+/>
+
         </div>       
          <Container>
           <Row className="align-items-center gy-4">
