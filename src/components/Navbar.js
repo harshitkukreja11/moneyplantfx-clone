@@ -32,18 +32,13 @@ const Navbar = () => {
               </Link>
             </Col>
             <Col xs={6} className="d-flex justify-content-end gap-2">
-              <Button
-                variant="dark"
-                className="navbar-button navbar-button-login"
-              >
-                Login
-              </Button>
-              <Button
-                variant="warning"
-                className="navbar-button navbar-button-webterminal"
-              >
-                Web Terminal
-              </Button>
+              <Button className="navbar-button-login">
+  Login
+</Button>
+<Button className="navbar-button-webterminal">
+  Web Terminal
+</Button>
+
             </Col>
           </Row>
         </Container>
@@ -73,22 +68,22 @@ const Navbar = () => {
 
               <NavDropdown title="Accounts" id="accounts-dropdown" className="custom-dropdown">
                 <NavDropdown.Item as={Link} to="/accounts">Account Types</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/accounts">Funding</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/accounts">Withdrawals</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/Deposit">Deposit Options</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/Withdrawl">Withdrawals Options</NavDropdown.Item>
               </NavDropdown>
 
               <NavDropdown title="Market to Trade" id="markets-dropdown" className="custom-dropdown">
                 <NavDropdown.Item as={Link} to="/markets">Forex</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/markets">Indices</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/markets">Commodities</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/markets">Crypto</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/markets">Metals</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/PreciousMetal">Precious Metals</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/Energy">Energy</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/Indices">Indices</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/Shares">Shares</NavDropdown.Item>
               </NavDropdown>
 
               <NavDropdown title="Platforms" id="platforms-dropdown" className="custom-dropdown">
                 <NavDropdown.Item as={Link} to="/platforms">MetaTrader 5</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/platforms">Web Terminal</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/platforms">Mobile Trading</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/Trading">Copy Trading </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/MobileTrading">Mobile Trading Apps</NavDropdown.Item>
               </NavDropdown>
 
               <Nav.Link
@@ -96,7 +91,7 @@ const Navbar = () => {
                 to="/news"
                 className={`custom-nav-link ${isActive('/news') ? 'active' : ''}`}
               >
-                News
+                News And Promos
               </Nav.Link>
               <Nav.Link
                 as={Link}

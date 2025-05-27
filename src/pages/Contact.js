@@ -90,46 +90,30 @@ const Contact = () => {
       <h2 className="text-center fw-bold mb-1 mt-5" data-aos="fade-down" style={{ color: '#0050a0' }}>OUR PRESENCE</h2>
       <Container className="py-5">
         <Row className="mb-5">
-          <Col md={6} className="mb-4">
+          <Col md={13} className="mb-4">
             <div style={{ backgroundColor: '#EEEEEE', padding: '30px', borderRadius: '10px',height:"250px" }}>
-              <h4 className="fw-semibold mb-3" style={{ color: '#0050a0' }}>Moheli Address</h4>
+              <h4 className="fw-semibold mb-3" style={{ color: '#0050a0' }}>Comoros Address</h4>
               <p className="mb-3 d-flex align-items-center" style={{ color: '#fc6716' }}>
                 <FaMapMarkerAlt className="me-2" style={{ color: '#0050a0' }} size={18} />
-                Registered Address: C/O Burney Tomar Ltd. 32 Nova Road, Croydon, United Kingdom, CRO 2TL
+             Registered Address: Bonovo Road, Fomboni, Island of Moheli, P.B 1257, Comoros
               </p>
               <p className="mb-3 d-flex align-items-center" style={{ color: '#fc6716' }}>
                 <FaPhoneAlt className="me-2" style={{ color: '#0050a0' }} size={18} />
-                Registration Number: 11086789
+                Registration Number: HT00324030
               </p>
               <p className="mb-3 d-flex align-items-center" style={{ color: '#fc6716' }}>
                 <FaEnvelope className="me-2" style={{ color: '#0050a0' }} size={18} />
-                info@moneyplantfx.com
+               support@moneyplantfze.com
               </p>
             </div>
           </Col>
 
-          <Col md={6} className="mb-4">
-            <div style={{ backgroundColor: '#EEEEEE', padding: '30px', borderRadius: '10px',height:"250px" }}>
-              <h4 className="fw-semibold mb-3" style={{ color: '#0050a0' }}>UAE Address</h4>
-              <p className="mb-3 d-flex align-items-center" style={{ color: '#fc6716' }}>
-                <FaMapMarkerAlt className="me-2" style={{ color: '#0050a0' }} size={18} />
-                Office- 103, The Business Center, Al Hamriya Street, Dubai – UAE
-              </p>
-              <p className="mb-3 d-flex align-items-center" style={{ color: '#fc6716' }}>
-                <FaEnvelope className="me-2" style={{ color: '#0050a0' }} size={18} />
-                info@moneyplantfx.com
-              </p>
-              <p className="mb-3 d-flex align-items-center" style={{ color: '#fc6716' }}>
-                <FaPhoneAlt className="me-2" style={{ color: '#0050a0' }} size={18} />
-                +971-43489984
-              </p>
-            </div>
-          </Col>
+          
         </Row>
 
         {/* Contact Form */}
         <Row className="justify-content-center">
-          <Col md={8}>
+          <Col md={13}>
             <h2 className="text-center fw-bold mb-2 mt-2" data-aos="fade-down" style={{ color: '#0050a0' }}>LET'S GET IN TOUCH</h2>
             <p className="text-center fs-4 fw-semibold" style={{ color: "#8a8a8a" }}>
               Fill in the form below and we'll get back to you as soon as possible
@@ -183,7 +167,21 @@ const Contact = () => {
           </Col>
         </Row>
       </Container>
-      
+      <div
+  style={{
+    backgroundColor: '#0050a0',
+    height:"100px",
+    textAlign: 'center',
+  }}
+>
+  <img
+    src="https://moneyplantfx.com/wp-content/uploads/2024/07/payment-buttons-1536x92.png"
+    width="100%"
+    alt="newsletter, visa"
+    className="my-4"
+  />
+</div>
+
     </div>
     
   );

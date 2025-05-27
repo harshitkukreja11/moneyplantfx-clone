@@ -1,4 +1,4 @@
-/* Top row */
+/* Top white row */
 .top-navbar {
   background-color: white;
 }
@@ -8,10 +8,11 @@
   height: 50px;
 }
 
-/* Bottom blue nav row */
+/* Bottom blue navbar */
 .custom-navbar {
   background-color: #0050a0 !important;
   padding: 0.5rem 0;
+  z-index: 1000;
 }
 
 /* Nav link styles */
@@ -21,7 +22,8 @@
   color: #ffffff !important;
   font-weight: 500;
   padding: 10px 16px;
-  transition: color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: relative;
 }
 
 .custom-nav-link:hover,
@@ -40,76 +42,69 @@
   background-color: white;
   border: none;
   margin-top: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 9999;
-
 }
 
 .custom-dropdown .dropdown-menu .dropdown-item {
   color: black;
   font-weight: 500;
   padding: 10px 20px;
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .custom-dropdown .dropdown-menu .dropdown-item:hover {
   background-color: #003c7d;
   color: white;
+  transform: translateX(5px);
+}
+
+/* Show dropdown on hover (desktop only) */
+@media (min-width: 992px) {
+  .custom-dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 
 /* Buttons */
-.navbar-button {
-  font-family: "Montserrat", "sans-serif";
-  font-size: "16px";
-  font-style: "normal";
-  font-weight: "400";
-  transition: 'background-color' 0.3s 'ease-in-out';
-}
-
-.navbar-button-login {
-  font-family: "Montserrat", "sans-serif";
-  font-size: "16px";
-  font-style: "normal";
-  font-weight: "400";
-  background-color: #fc6716; /* Dark orange */
-  color: white;
-  border: 1px solid black;
-  
-}
-.navbar-button-login:hover {
-  background-color: #0050a0 ;
-  color: #fff;
-}
-
+.navbar-button-login,
 .navbar-button-webterminal {
-  background-color: #fc6716; /* Dark orange */
-  border: none;
-  color: white;
-  border: 1px solid black;
+  background-color: #fc6716 !important; /* Enforce orange */
+  color: white !important;
+  border: 1px solid black !important;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.navbar-button-login:hover,
 .navbar-button-webterminal:hover {
-  background-color: #0050a0 ;
-  color: #fff;
+  background-color: #0050a0 !important; /* Deep blue on hover */
+  color: white !important;
 }
+
+
 
 /* Marquee section */
 .running-text {
-  background-color: #fc6716; /* Dark orange */
+  background-color: #fc6716;
   font-size: 14px;
+  overflow: hidden;
 }
 
-/* Hover dropdowns */
-.custom-dropdown:hover .dropdown-menu {
-  display: block;
-  margin-top: 0;
-}
-
-/* Scrolling text animation */
 .scrolling-text {
   display: inline-block;
   white-space: nowrap;
   padding-left: 100%;
   animation: scroll-left 25s linear infinite;
 }
+
 
 @keyframes scroll-left {
   0% {
@@ -124,5 +119,15 @@
 @media (max-width: 768px) {
   .running-text {
     font-size: 12px;
+  }
+
+  .navbar-logo {
+    height: 40px;
+  }
+
+  .navbar-button-login,
+  .navbar-button-webterminal {
+    padding: 0.25rem 0.75rem;
+    font-size: 14px;
   }
 }

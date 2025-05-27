@@ -15,6 +15,14 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import StickyFooterIcons from './components/StickyFooterIcons';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import Deposit from './pages/Deposit';
+import Withdrawl from './pages/Withdrawl';
+import PreciousMetal from './pages/PreciousMetal';
+import Energy from './pages/Energy';
+import Indices from './pages/Indices';
+import Shares from './pages/Shares';
+import Trading from './pages/Trading';
+import MobileTrading from './pages/MobileTrading';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,6 +49,19 @@ const App = () => {
           <Route path="/news" element={<News />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path='/deposit' element={<Deposit />} />
+          <Route path='/withdrawl' element={<Withdrawl />} />
+           <Route path='/preciousmetal' element={<PreciousMetal />} />
+           <Route path="/energy" element={<Energy />} />
+           <Route path="/indices" element={<Indices />} />
+           <Route path="/shares" element={<Shares />} />
+          <Route path="/trading" element={<Trading />} />
+           <Route path="/mobiletrading" element={<MobileTrading />} />
+
+
+
+
+
         </Routes>
 
       
