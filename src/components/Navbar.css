@@ -51,7 +51,7 @@
 }
 
 .custom-dropdown .dropdown-menu .dropdown-item {
-  color: black;
+    color: black !important;
   font-weight: 500;
   padding: 10px 20px;
   transition: all 0.3s ease-in-out;
@@ -61,6 +61,19 @@
   background-color: #003c7d;
   color: white;
   transform: translateX(5px);
+}
+@media (max-width: 991px) {
+  .custom-dropdown .dropdown-menu {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .custom-dropdown.show .dropdown-menu {
+    display: block !important;
+    opacity: 1;
+    transform: translateY(0);
+     visibility: visible;
+  }
 }
 
 /* Show dropdown on hover (desktop only) */

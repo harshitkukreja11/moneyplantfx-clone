@@ -1,5 +1,5 @@
 // src/components/Navbar.js
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   Navbar as BootstrapNavbar,
@@ -11,11 +11,36 @@ import {
   Col,
 } from 'react-bootstrap';
 import './Navbar.css';
+import { Collapse } from 'bootstrap';
+
 
 const Navbar = () => {
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
 
+   // Auto-close mobile menu when a nav link is clicked
+  useEffect(() => {
+    const navLinks = document.querySelectorAll(
+      ".navbar-collapse .nav-link, .navbar-collapse .dropdown-item"
+    );
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+
+    const handleClick = () => {
+      if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+        new Collapse(navbarCollapse).hide();
+      }
+    };
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", handleClick);
+    });
+
+    return () => {
+      navLinks.forEach((link) => {
+        link.removeEventListener("click", handleClick);
+      });
+    };
+  }, []);
   return (
     <div className="main-navbar-container">
       {/* Top white row with logo and buttons */}
