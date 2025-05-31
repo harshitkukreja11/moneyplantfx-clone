@@ -63,21 +63,7 @@
   transform: translateX(5px);
 }
 @media (max-width: 991px) {
-  .custom-dropdown .dropdown-menu {
-    transition: all 0.3s ease-in-out;
-    overflow: hidden;
-    
-  }
-
-  .custom-dropdown.show .dropdown-menu {
-    display: block !important;
-    opacity: 1;
-    transform: translateY(0);
-     visibility: visible;
-  }
-}
-@media (max-width: 991px) {
-  /* Full black mobile dropdown background */
+  /* Mobile navbar container */
   .navbar-collapse {
     background-color: black !important;
     padding: 15px 0;
@@ -90,13 +76,13 @@
     border-top: 1px solid #333;
   }
 
-  /* Navbar items: left-aligned text, right-aligned +/- icons */
+  /* Nav links and dropdown toggles full width */
   .navbar-collapse .custom-nav-link,
   .navbar-collapse .custom-dropdown > .dropdown-toggle {
     color: white !important;
     display: block;
     width: 100%;
-    padding: 12px 40px 12px 20px; /* space for the +/- icon */
+    padding: 12px 40px 12px 20px;
     border-bottom: 1px solid #2a2a2a;
     text-align: left;
     position: relative;
@@ -105,12 +91,18 @@
     font-weight: 500;
   }
 
+  /* Ensure dropdown titles like Platforms, Accounts, etc. get full-width */
+  .navbar-collapse .custom-dropdown {
+    width: 100%;
+  }
+
+  /* Remove bottom border from last nav link */
   .navbar-collapse .nav-item:last-child > .custom-nav-link,
   .navbar-collapse .nav-item:last-child > .custom-dropdown > .dropdown-toggle {
     border-bottom: none;
   }
 
-  /* Right-aligned + by default */
+  /* Right-aligned + icon */
   .navbar-collapse .custom-dropdown > .dropdown-toggle::after {
     content: "+";
     font-weight: bold;
@@ -125,12 +117,12 @@
     background-image: none !important;
   }
 
-  /* Change to - when expanded */
+  /* Toggle to - when dropdown is expanded */
   .navbar-collapse .custom-dropdown > .dropdown-toggle[aria-expanded="true"]::after {
     content: "-";
   }
 
-  /* Dropdown menu styles */
+  /* Dropdown menu container styling */
   .custom-dropdown .dropdown-menu {
     background-color: black;
     border: none;
@@ -145,7 +137,7 @@
     overflow: hidden;
   }
 
-  /* Show dropdown when parent is open */
+  /* Show dropdown when parent has .show */
   .custom-dropdown.show .dropdown-menu {
     display: block !important;
     opacity: 1;
@@ -153,15 +145,16 @@
     visibility: visible;
   }
 
-  /* Submenu items (dropdown items) styling */
+  /* Dropdown items style (submenu) */
   .custom-dropdown .dropdown-menu .dropdown-item {
     color: #cccccc !important;
     font-weight: 500;
-    padding: 10px 20px 10px 35px; /* Indent for submenu */
+    padding: 12px 20px 12px 35px;
     display: block;
     width: 100%;
     border-bottom: 1px solid #2a2a2a;
     background-color: transparent !important;
+    text-align: left;
   }
 
   .custom-dropdown .dropdown-menu .dropdown-item:last-child {

@@ -58,7 +58,7 @@ const Navbar = () => {
         <Container>
           <BootstrapNavbar.Toggle aria-controls="main-nav" />
           <BootstrapNavbar.Collapse id="main-nav">
-            <Nav className="mx-auto align-items-center">
+            <Nav className="w-100 align-items-start flex-column flex-lg-row">
               <Nav.Link
                 as={Link}
                 to="/"
@@ -84,147 +84,159 @@ const Navbar = () => {
               </Nav.Link>
 
               <NavDropdown
-                title="Accounts"
-                id="accounts-dropdown"
-                className="custom-dropdown"
-                show={openDropdown === 'accounts'}
-                onToggle={(isOpen) =>
-                  setOpenDropdown(isOpen ? 'accounts' : null)
-                }
-              >
-                <NavDropdown.Item
-                  as={Link}
-                  to="/accounts"
-                  onClick={() => {
-                    setExpanded(false);
-                    setOpenDropdown(null);
-                  }}
-                >
-                  Account Types
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/Deposit"
-                  onClick={() => {
-                    setExpanded(false);
-                    setOpenDropdown(null);
-                  }}
-                >
-                  Deposit Options
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/Withdrawl"
-                  onClick={() => {
-                    setExpanded(false);
-                    setOpenDropdown(null);
-                  }}
-                >
-                  Withdrawals Options
-                </NavDropdown.Item>
-              </NavDropdown>
+  title="Accounts"
+  id="accounts-dropdown"
+  className="custom-dropdown"
+  show={openDropdown === 'accounts'}
+  onToggle={(isOpen) =>
+    setOpenDropdown(isOpen ? 'accounts' : null)
+  }
+>
+  <NavDropdown.Item
+    as={Link}
+    to="/accounts"
+    className="dropdown-item"
+    onClick={() => {
+      setExpanded(false);
+      setOpenDropdown(null);
+    }}
+  >
+    Account Types
+  </NavDropdown.Item>
+  <NavDropdown.Item
+    as={Link}
+    to="/Deposit"
+    className="dropdown-item"
+    onClick={() => {
+      setExpanded(false);
+      setOpenDropdown(null);
+    }}
+  >
+    Deposit Options
+  </NavDropdown.Item>
+  <NavDropdown.Item
+    as={Link}
+    to="/Withdrawl"
+    className="dropdown-item"
+    onClick={() => {
+      setExpanded(false);
+      setOpenDropdown(null);
+    }}
+  >
+    Withdrawals Options
+  </NavDropdown.Item>
+</NavDropdown>
 
-              <NavDropdown
-                title="Market to Trade"
-                id="markets-dropdown"
-                className="custom-dropdown"
-                show={openDropdown === 'markets'}
-                onToggle={(isOpen) =>
-                  setOpenDropdown(isOpen ? 'markets' : null)
-                }
-              >
-                <NavDropdown.Item
-                  as={Link}
-                  to="/markets"
-                  onClick={() => {
-                    setExpanded(false);
-                    setOpenDropdown(null);
-                  }}
-                >
-                  Forex
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/PreciousMetal"
-                  onClick={() => {
-                    setExpanded(false);
-                    setOpenDropdown(null);
-                  }}
-                >
-                  Precious Metals
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/Energy"
-                  onClick={() => {
-                    setExpanded(false);
-                    setOpenDropdown(null);
-                  }}
-                >
-                  Energy
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/Indices"
-                  onClick={() => {
-                    setExpanded(false);
-                    setOpenDropdown(null);
-                  }}
-                >
-                  Indices
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/Shares"
-                  onClick={() => {
-                    setExpanded(false);
-                    setOpenDropdown(null);
-                  }}
-                >
-                  Shares
-                </NavDropdown.Item>
-              </NavDropdown>
+<NavDropdown
+  title="Market to Trade"
+  id="markets-dropdown"
+  className="custom-dropdown"
+  show={openDropdown === 'markets'}
+  onToggle={(isOpen) =>
+    setOpenDropdown(isOpen ? 'markets' : null)
+  }
+>
+  <NavDropdown.Item
+    as={Link}
+    to="/markets"
+    className="dropdown-item"
+    onClick={() => {
+      setExpanded(false);
+      setOpenDropdown(null);
+    }}
+  >
+    Forex
+  </NavDropdown.Item>
+  <NavDropdown.Item
+    as={Link}
+    to="/PreciousMetal"
+    className="dropdown-item"
+    onClick={() => {
+      setExpanded(false);
+      setOpenDropdown(null);
+    }}
+  >
+    Precious Metals
+  </NavDropdown.Item>
+  <NavDropdown.Item
+    as={Link}
+    to="/Energy"
+    className="dropdown-item"
+    onClick={() => {
+      setExpanded(false);
+      setOpenDropdown(null);
+    }}
+  >
+    Energy
+  </NavDropdown.Item>
+  <NavDropdown.Item
+    as={Link}
+    to="/Indices"
+    className="dropdown-item"
+    onClick={() => {
+      setExpanded(false);
+      setOpenDropdown(null);
+    }}
+  >
+    Indices
+  </NavDropdown.Item>
+  <NavDropdown.Item
+    as={Link}
+    to="/Shares"
+    className="dropdown-item"
+    onClick={() => {
+      setExpanded(false);
+      setOpenDropdown(null);
+    }}
+  >
+    Shares
+  </NavDropdown.Item>
+</NavDropdown>
 
-              <NavDropdown
-                title="Platforms"
-                id="platforms-dropdown"
-                className="custom-dropdown"
-                show={openDropdown === 'platforms'}
-                onToggle={(isOpen) =>
-                  setOpenDropdown(isOpen ? 'platforms' : null)
-                }
-              >
-                <NavDropdown.Item
-                  as={Link}
-                  to="/platforms"
-                  onClick={() => {
-                    setExpanded(false);
-                    setOpenDropdown(null);
-                  }}
-                >
-                  MetaTrader 5
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/Trading"
-                  onClick={() => {
-                    setExpanded(false);
-                    setOpenDropdown(null);
-                  }}
-                >
-                  Copy Trading
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/MobileTrading"
-                  onClick={() => {
-                    setExpanded(false);
-                    setOpenDropdown(null);
-                  }}
-                >
-                  Mobile Trading Apps
-                </NavDropdown.Item>
-              </NavDropdown>
+<NavDropdown
+  title="Platforms"
+  id="platforms-dropdown"
+  className="custom-dropdown"
+  show={openDropdown === 'platforms'}
+  onToggle={(isOpen) =>
+    setOpenDropdown(isOpen ? 'platforms' : null)
+  }
+>
+  <NavDropdown.Item
+    as={Link}
+    to="/platforms"
+    className="dropdown-item"
+    onClick={() => {
+      setExpanded(false);
+      setOpenDropdown(null);
+    }}
+  >
+    MetaTrader 5
+  </NavDropdown.Item>
+  <NavDropdown.Item
+    as={Link}
+    to="/Trading"
+    className="dropdown-item"
+    onClick={() => {
+      setExpanded(false);
+      setOpenDropdown(null);
+    }}
+  >
+    Copy Trading
+  </NavDropdown.Item>
+  <NavDropdown.Item
+    as={Link}
+    to="/MobileTrading"
+    className="dropdown-item"
+    onClick={() => {
+      setExpanded(false);
+      setOpenDropdown(null);
+    }}
+  >
+    Mobile Trading Apps
+  </NavDropdown.Item>
+</NavDropdown>
+
 
               <Nav.Link
                 as={Link}
