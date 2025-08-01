@@ -1,0 +1,15 @@
+.terms-page {
+  background-color: #f9f9f9;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.terms-page h3 {
+  font-weight: 600;
+}
+
+.terms-page p,
+.terms-page li {
+  line-height: 1.7;
+  font-size: 1.05rem;
+}

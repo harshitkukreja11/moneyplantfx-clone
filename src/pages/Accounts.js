@@ -4,6 +4,7 @@ import { FaCheck } from 'react-icons/fa';
 import AOS from 'aos'; // Import AOS library
 import 'aos/dist/aos.css'; // Import AOS styles
 
+
 const accountsData = [
   {
     title: "STANDARD",

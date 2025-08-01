@@ -4,18 +4,3 @@
 @import "swiper/css/autoplay";
 
 /* You can add any other global styles here */
-/* In App.css or Blog.css */
-.hover-blue:hover {
-  color: #0d6efd;
-}
-.image-container {
-  overflow: hidden;
-}
-
-.image-container img {
-  transition: transform 0.5s ease;
-}
-
-.image-container:hover img {
-  transform: scale(1.05); /* Zoom effect */
-}

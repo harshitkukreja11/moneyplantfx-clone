@@ -25,6 +25,10 @@
   transition: all 0.3s ease-in-out;
   position: relative;
 }
+.custom-nav-link {
+  margin-right: 4px;
+}
+
 
 .custom-nav-link:hover,
 .custom-dropdown:hover .dropdown-toggle {

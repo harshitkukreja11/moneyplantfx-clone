@@ -23,6 +23,10 @@ import Indices from './pages/Indices';
 import Shares from './pages/Shares';
 import Trading from './pages/Trading';
 import MobileTrading from './pages/MobileTrading';
+import Login from './pages/Login';
+import WebTerminal from './pages/WebTerminal';
+import Terms from './pages/Terms';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -57,6 +61,11 @@ const App = () => {
            <Route path="/shares" element={<Shares />} />
           <Route path="/trading" element={<Trading />} />
            <Route path="/mobiletrading" element={<MobileTrading />} />
+           <Route path="/login" element={<Login />} /> 
+           <Route path="/web-terminal" element={<WebTerminal />} />
+           <Route path="/terms" element={<Terms />} />
+           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+  
 
 
 

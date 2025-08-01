@@ -1,0 +1,24 @@
+.banner-section {
+  background: url('https://moneyplantfx.com/wp-content/themes/MoneyPlant/assets/img/bg-header.jpg') center center no-repeat;
+  background-size: cover;
+  height: 400px;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.white-section {
+  background-color: #fff;
+  color: #000;
+}
+
+.white-section h2, 
+.white-section h4 {
+  color: gray;
+  font-weight: 600;
+}
+
+.white-section p,
+.white-section li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: gray;
+}

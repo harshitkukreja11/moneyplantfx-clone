@@ -2,39 +2,48 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './Footer.css'; // Import custom styles for the footer
 
+
 const Footer = () => {
   return (
     <footer className="footer bg-dark text-white py-5">
       <Container>
         <Row>
           {/* Column 1: Trading Links */}
-          <Col md={4} className="mb-4">
+          <Col md={3} className="mb-4">
             <h5 className="footer-heading mb-3">Start Trading</h5>
             <ul className="footer-links list-unstyled">
-              <li><a href="/accounts" className="text-white d-block mb-2">Open Live Account</a></li>
-              <li><a href="/platforms" className="text-white d-block mb-2">Open Demo Account</a></li>
-              <li><a href="/markets" className="text-white d-block mb-2">Deposit Funds</a></li>
-              <li><a href="/tools" className="text-white d-block mb-2">Funds Withdrawal</a></li>
-              <li><a href="/partnership" className="text-white d-block mb-2">Platforms</a></li>
+              <li><a href="/login" className="text-white d-block mb-2">Open Live Account</a></li>
+              <li><a href="/login" className="text-white d-block mb-2">Open Demo Account</a></li>
+              <li><a href="/deposit" className="text-white d-block mb-2">Deposit Funds</a></li>
+              <li><a href="/withdrawl" className="text-white d-block mb-2">Funds Withdrawal</a></li>
+              <li><a href="/platforms" className="text-white d-block mb-2">Platforms</a></li>
             </ul>
           </Col>
 
           {/* Column 2: Platform Links */}
-          <Col md={4} className="mb-4">
+          <Col md={3} className="mb-4">
             <h5 className="footer-heading mb-3">Platform</h5>
             <ul className="footer-links list-unstyled">
-              <li><a href="/news" className="text-white d-block mb-2">MT5 – MetaTrader</a></li>
+              <li><a href="/platforms" className="text-white d-block mb-2">MT5 – MetaTrader</a></li>
               <li><a href="/careers" className="text-white d-block mb-2">MetaTrader - Google Play</a></li>
               <li><a href="/legal" className="text-white d-block mb-2">MetaTrader - App Store</a></li>
             </ul>
           </Col>
 
           {/* Column 3: Support Links */}
-          <Col md={4} className="mb-4">
+          <Col md={3} className="mb-4">
             <h5 className="footer-heading mb-3">24/5 Live Support</h5>
             <ul className="footer-links list-unstyled">
-              <li><a href="/accounts" className="text-white d-block mb-2">Client Portal Login</a></li>
-              <li><a href="/platforms" className="text-white d-block mb-2">Partner Portal Login</a></li>
+              <li><a href="/login" className="text-white d-block mb-2">Client Portal Login</a></li>
+              <li><a href="/login" className="text-white d-block mb-2">Partner Portal Login</a></li>
+            </ul>
+          </Col>
+           {/* Column 4: Terms and condition */}
+          <Col md={3} className="mb-4">
+            <h5 className="footer-heading mb-3">Company Info</h5>
+            <ul className="footer-links list-unstyled">
+              <li><a href="/terms" className="text-white d-block mb-2">Terms & Conditions</a></li>
+              <li><a href="/privacy-policy" className="text-white d-block mb-2">Privacy Policy</a></li>
             </ul>
           </Col>
         </Row>

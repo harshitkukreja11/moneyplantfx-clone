@@ -18,6 +18,7 @@ const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown id
 
   const isActive = (path) => location.pathname === path;
+
   
 
 
@@ -38,8 +39,15 @@ const Navbar = () => {
               </Link>
             </Col>
             <Col xs={6} className="d-flex justify-content-end gap-2">
-              <Button className="navbar-button-login">Login</Button>
-              <Button className="navbar-button-webterminal">Web Terminal</Button>
+            <Link to="/login">
+                <Button className="navbar-button-login">Login</Button>
+              </Link>
+
+
+              <Link to="/web-terminal">
+  <Button className="navbar-button-webterminal">Web Terminal</Button>
+</Link>
+
             </Col>
           </Row>
         </Container>

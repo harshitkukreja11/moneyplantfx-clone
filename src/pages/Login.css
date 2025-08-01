@@ -1,0 +1,16 @@
+.login-page {
+  height: 100vh;
+  padding: 20px;
+}
+
+.login-card {
+  max-width: 350px;
+  max-height: 1000px;
+  background: #ffffff;
+  border-radius: 12px;
+  margin-top: 50px;
+}
+
+.login-logo {
+  max-width: 180px;
+}

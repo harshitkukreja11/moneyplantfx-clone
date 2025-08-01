@@ -106,8 +106,7 @@ const Home = () => {
       <section className="hero-section text-white position-relative" style={{ minHeight: '90vh', overflow: 'hidden' }}>
         {/* Background Video */}
         <div className="video-wrapper">
-          <iframe
-  src="https://player.vimeo.com/video/980575359?muted=1&autoplay=1&loop=1&background=1"
+          <iframe src="https://player.vimeo.com/video/980575359?muted=1&autoplay=1&loop=1&background=1"
   title="Background Video"
   allow="autoplay; fullscreen"
   className="video-iframe"
