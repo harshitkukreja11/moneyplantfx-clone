@@ -35,7 +35,7 @@ const LayoutWrapper = () => {
   const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
 
   return (
-    <div className="flex flex-col min-h-screen">
+   <div className="flex flex-col min-h-screen bg-transparent">
       {!shouldHideLayout && <Navbar />}
 
       <Routes>

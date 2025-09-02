@@ -10,6 +10,7 @@ const WebTerminal = () => {
             title="MetaTrader Web Terminal"
             src="https://trade.mql5.com/trade?servers=MoneyPlantFX-Live"
             frameBorder="0"
+            
             allowFullScreen
           />
         </div>

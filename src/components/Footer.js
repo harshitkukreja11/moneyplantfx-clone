@@ -5,7 +5,7 @@ import './Footer.css'; // Import custom styles for the footer
 
 const Footer = () => {
   return (
-    <footer className="footer bg-dark text-white py-5">
+    <footer className="footer  text-white py-5">
       <Container>
         <Row>
           {/* Column 1: Trading Links */}

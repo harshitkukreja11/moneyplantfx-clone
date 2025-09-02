@@ -2,60 +2,21 @@
 
 /* --- Hero Section --- */
 .hero-section {
-  /* min-height: 90vh; /* Or set height/min-height here instead of inline style */
+  
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative; /* CRITICAL: Needed for absolute positioning of children */
-  overflow: hidden;  /* CRITICAL: Prevents video overflow */
-   background-color: #003d80; /* Optional: Fallback color if video fails */
+
 }
 
-/* Wrapper div containing the iframe */
-.video-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0; /* Place it behind overlay and content */
-  overflow: hidden; /* Extra safety */
-}
 
-/* The iframe itself */
-.video-iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Center the video */
 
-  /* --- Video Covering Logic --- */
-  /* Make video width match viewport width */
-  width: 100vw;
-  /* Calculate height based on 16:9 aspect ratio */
-  height: calc(100vw * 9 / 16);
 
-  /* If viewport is taller than 16:9, video height needs to match viewport height */
-  min-height: 100vh;
-   /* Calculate width based on 16:9 aspect ratio */
-  min-width: calc(100vh * 16 / 9);
 
-  pointer-events: none; /* Allow clicks to pass through to content */
-}
 
-/* Optional: Dark overlay for text readability */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Adjust transparency as needed (0.3 = 30% black) */
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 1; /* Above video wrapper, below content */
-}
+
 
 /* Ensure Hero content is above the overlay */
 .hero-section .container {
@@ -287,6 +248,33 @@
     transform: translateY(-2px);
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
+.fresher-bg {
+  background: radial-gradient(
+    73.93% 114.09% at 7.12% 115.71%,
+    #141215 3.44%,
+    #141215 39.93%,
+    #141215 53.85%,
+    #141114 88.02%
+  );
+  border: 1px solid #FD866A;
+  border-radius: 40px;
+  color: #fff; /* text becomes readable */
+  padding: 3rem 1rem; /* some breathing space */
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.1); /* white fade */
+  z-index: 1;
+}
+
+section > .container {
+  position: relative;
+  z-index: 2; /* keeps content above the overlay */
+}
+
+
 
 
 /* --- Mobile Responsiveness --- */
@@ -407,3 +395,5 @@
     padding: 6rem 1rem;
   }
 }
+
+

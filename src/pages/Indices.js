@@ -103,7 +103,7 @@ const Indices = () => {
     }, []);
     
   return (
-    <div className="bg-light py-5">
+    <div className="bg-transparent py-5">
       <Container>
         {/* Forex Trading Features */}
         <div className="p-4">

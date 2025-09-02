@@ -3,4 +3,27 @@
 @import "swiper/css";
 @import "swiper/css/autoplay";
 
-/* You can add any other global styles here */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: linear-gradient(
+    180deg,
+    #C4D3E7 -1.17%,
+    #FFFFFF 8.93%,
+    #BECCE3 35.12%,
+    #FFFFFF 43.49%,
+    #D6E1F0 56.65%,
+    #FFFFFF 75.03%,
+    #DAE3F2 87.22%,
+    #C4D3E7 104.64%
+  ) !important;
+ 
+}
+
+body, #root {
+  background: transparent !important;
+}

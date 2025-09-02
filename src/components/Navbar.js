@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <div className="main-navbar-container">
       {/* Top white row with logo and buttons */}
-      <div className="top-navbar bg-white py-2 shadow-sm">
+      <div className="top-navbar bg-transparent py-2 shadow-sm">
         <Container>
           <Row className="align-items-center">
             <Col xs={6} className="d-flex align-items-center">

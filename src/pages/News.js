@@ -36,7 +36,7 @@ const News = () => {
   }, []);
 
   return (
-    <div className="py-5 bg-light">
+    <div className="py-5 bg-transparent">
       <Container>
         {/* --- Offers Section --- */}
         <div className="text-center mb-5">

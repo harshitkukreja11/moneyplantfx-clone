@@ -1,34 +1,41 @@
+/* Reset some default styles */
 .App {
   text-align: center;
+  background: transparent !important; /* let body gradient show */
+  min-height: 100vh; /* ensure full height */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/* Remove CRA default dark background */
 .App-header {
-  background-color: #282c34;
+  background: transparent !important;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #000; /* dark text works better on light gradient */
 }
 
+/* Optional: logo styles (keep if you still use logo) */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  animation: App-logo-spin infinite 20s linear;
+}
+
+/* Links */
 .App-link {
-  color: #61dafb;
+  color: #0050a0; /* matches your site’s blue */
+  font-weight: 500;
+  text-decoration: none;
 }
 
+.App-link:hover {
+  text-decoration: underline;
+}
 
+/* Logo spin animation (if you keep it) */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,6 +1,11 @@
 /* Footer background and text color */
 .footer {
-  background-image: url('https://moneyplantfx.com/wp-content/uploads/2024/07/sl_022321_41020_35-1-scaled.jpg');
+ background: radial-gradient(
+    90.19% 115.71% at 7.12% 115.71%,
+    #181723 3.44%,
+    #3e3e57 39.93%,
+    #050407 88.02%
+     );
   background-size: cover; /* Cover the entire footer */
   background-position: center center; /* Center the image */
   background-repeat: no-repeat; /* Prevent repeating */

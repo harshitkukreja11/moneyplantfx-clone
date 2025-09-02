@@ -40,6 +40,9 @@ const Home = () => {
     if (container && !container.querySelector("script")) {
       container.appendChild(script);
     }
+
+
+
     
   }, []);
   const featuresData = [
@@ -48,48 +51,57 @@ const Home = () => {
       text: 'MoneyPlant is committed to your wealth creation, we offer the lowest spreads in the industry with 0.0 pips per EUR/USD.',
       img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic1.png',
       alt: 'Lowest Spreads Icon',
+        backgroundColor: '#FCDBE7',
+      
     },
     {
       title: 'Balanced Approach',
       text: 'With our network with Major Global banks and financial institutions your money safe and segregated for a balanced and protected future.',
       img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic2.png',
       alt: 'Fund Safety Icon',
+      backgroundColor: '#D4ECF5',
     },
     {
       title: 'Advanced Trading Analytics',
       text: 'With MT5 analyzing the market like never before, our analytics and reports are here to keep a track of all your investments.',
       img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic3.png',
       alt: 'Trading Analytics Icon',
+      backgroundColor: '#FBE0C4',
     },
     {
       title: 'Transparency',
       text: 'You believe in us and we believe in transparency. Our model is 100% transparent and build to deliver the best to all our traders.',
       img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic4.png',
       alt: 'Transparency Icon',
+      backgroundColor: '#D2DCDB',
     },
     {
       title: 'Diverse Investment Portfolio',
       text: 'Now with a single trading account invest in all types of financial products, Crypto, Forex, Indices, Metal, Equity and more- Build an unbeatable investment portfolio with MoneyPlant',
       img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic5.png',
       alt: 'Portfolio Icon',
+      backgroundColor: '#FBE0C4',
     },
     {
       title: 'Invest Easy',
       text: 'Register in 5 minutes and experience the fastest transaction online with MoneyPlant. Each financial decision you make is now just a click away from reality.',
       img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic6.png',
       alt: 'Easy Investment Icon',
+       backgroundColor: '#D2DCDB',
     },
     {
       title: '0% commission and charges',
       text: 'We offer zero deposit money on your funds, with minimal to zero commission to all our traders.',
       img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic7.png',
       alt: 'Zero Commission Icon',
+      backgroundColor: '#FCDBE7',
     },
     {
       title: 'Multilingual Support',
       text: 'Our 24*7 support is here to guide in your language, make informed financial decisions with our experts and experience the smoothest operations with our customer support.',
       img: 'https://moneyplantfx.com/wp-content/uploads/2024/07/ic8.png',
       alt: 'Support Icon',
+       backgroundColor: '#D4ECF5',
     },
   ];
   
@@ -97,58 +109,82 @@ const Home = () => {
   const handleButtonClick = (action) => {
     console.log(`${action} button clicked!`);
   };
+  
 
   return (
     <>
      
+{/* Hero Section */}
+<section
+  className="hero-section text-black position-relative bg-transparent"
+  style={{ minHeight: '90vh', overflow: 'hidden' }}
+>
+  <Container>
+    <Row className="align-items-center gy-4">
+      <Col md={6} data-aos="fade-right" className="text-center text-md-start">
+        <h1 className="display-4 fw-bold">Easy Trade | Easy Money</h1>
+        <p className="lead">
+          Updates 24*7 on market trends with extensive background data on every investment
+        </p>
+        <div className="d-flex gap-3 justify-content-center justify-content-md-start mt-4">
+          <Button
+            variant="light"
+            size="lg"
+            className="fw-bold"
+            onClick={() => handleButtonClick('Login')}
+          >
+            Login
+          </Button>
+          <Button
+            variant="outline-light"
+            size="lg"
+            className="fw-bold"
+            onClick={() => handleButtonClick('Sign Up')}
+          >
+            Sign Up
+          </Button>
+        </div>
+      </Col>
 
-      {/* Hero Section */}
-      <section className="hero-section text-white position-relative" style={{ minHeight: '90vh', overflow: 'hidden' }}>
-        {/* Background Video */}
-        <div className="video-wrapper">
-          <iframe src="https://player.vimeo.com/video/980575359?muted=1&autoplay=1&loop=1&background=1"
-  title="Background Video"
-  allow="autoplay; fullscreen"
-  className="video-iframe"
-  style={{ border: 'none' }}
-/>
+      <Col md={6} data-aos="fade-left" className="text-center">
+        <img
+          src="https://moneyplantfx.com/wp-content/uploads/2024/07/moneyplant-bg-1-1536x1093.png"
+          alt="MoneyPlantFX platform interface example"
+          className="img-fluid rounded"
+          style={{ maxHeight: '400px' }}
+        />
+      </Col>
+    </Row>
+  </Container>
 
-        </div>       
-         <Container>
-          <Row className="align-items-center gy-4">
-            <Col md={6} data-aos="fade-right" className="text-center text-md-start">
-              <h1 className="display-4 fw-bold">Easy Trade | Easy Money</h1>
-              <p className="lead">
-                Updates 24*7 on market trends with extensive background data on every investment
-              </p>
-              <div className="d-flex gap-3 justify-content-center justify-content-md-start mt-4">
-                <Button variant="light" size="lg" className="fw-bold" onClick={() => handleButtonClick('Login')}>
-                  Login
-                </Button>
-                <Button variant="outline-light" size="lg" className="fw-bold" onClick={() => handleButtonClick('Sign Up')}>
-                  Sign Up
-                </Button>
-              </div>
-            </Col>
+  {/* Centered background image */}
+  <div
+    style={{
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      backgroundImage: `url(${require('./images/Group.jpg')})`,
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      width: '300px',   // control size
+      height: '300px',
+      opacity: 0.3,     // see-through so gradient stays visible
+      zIndex: 0,
+      pointerEvents: 'none',
+    }}
+  />
+</section>
 
-            <Col md={6} data-aos="fade-left" className="text-center">
-              <img
-                src="https://moneyplantfx.com/wp-content/uploads/2024/07/moneyplant-bg-1-1536x1093.png"
-                alt="MoneyPlantFX platform interface example"
-                className="img-fluid rounded "
-                style={{ maxHeight: '400px' }}
-              />
-            </Col>
-          </Row>
-        </Container>
-      </section>
+
  {/* TradingView Ticker Tape Widget - Moved Below Hero Section */}
     
       <div id="ticker-tape-container" style={{ width: '100%' }}></div>
       
       {/* Feature Section: YOU TRADE IT. WE HAVE IT. #1 */}
       {/* Consider moving common section styles (like py-5, bg-light) to CSS classes */}
-      <section className="py-5 bg-light text-center">
+      <section className="py-5 bg-transparent text-center">
         <Container>
           {/* Main Heading */}
           <h2 className="fw-bold text-primary mb-5" data-aos="fade-up" >YOU TRADE IT. WE HAVE IT.</h2>
@@ -188,15 +224,19 @@ const Home = () => {
 
      {/* Features Section (8 Cards) */}
     
-  <section className="features-section py-5 bg-white">
+  <section className="features-section py-5 bg-transparent">
     <Container>
       <h2 className="fw-bold text-primary text-center mb-5" data-aos="fade-up">YOU TRADE IT. WE HAVE IT.</h2>
       <Row className="text-center g-4">
         {featuresData.map((feature, index) => (
+          
           <Col key={index} md={3} sm={6} data-aos="fade-up" data-aos-delay={index * 100}>
-            <Card className="border-0 h-100">
+            <Card className="border-0 h-100"  style={{
+    backgroundColor: feature.backgroundColor || 'white', // fallback white
+    borderRadius: '20px'
+  }}>
               <Card.Body className="d-flex flex-column p-4">
-                <img src={feature.img} alt={feature.alt} className="mb-3 align-self-center" style={{ height: '122px', width: 'auto' }} />
+                <img src={feature.img} alt={feature.alt} className="mb-3 align-self-center" style={{ height: '122px', width: 'auto'}} />
                 <Card.Title className="fw-bold mt-auto h5" style={{
     marginBottom: '6px',
     color: '#FF6600',
@@ -213,9 +253,10 @@ const Home = () => {
       </Row>
     </Container>
   </section>
+  
      
       {/* Animated Finger Section - Consider CSS class for background */}
-      <section className="py-5 text-white" style={{ backgroundColor: '#0056b3' }}>
+      <section className="py-5 text-black" >
         <Container>
           <Row className="align-items-center gy-4"> {/* Added gy-4 */}
             {/* Text on Left */}
@@ -246,53 +287,53 @@ const Home = () => {
       </section>
 
       {/* Fresher to Trading Section */}
-      <section className="py-5 bg-light"> {/* Added bg-light */}
-        <Container>
-          <Row className="align-items-center gy-4"> {/* Added gy-4 */}
-            {/* Text and Buttons */}
-            <Col md={6} className="mb-4 mb-md-0" data-aos="fade-right">
-              <h2 className="fw-bold mb-4">FRESHER TO TRADING?</h2>
-              <p className="lead">
-                Learn from the best! Our software lets you follow the footsteps of top traders who are
-                making most of the market. With Money Plant you can copy their investment decisions and
-                advice for maximum returns.
-              </p>
-              <div className="mt-4 d-flex flex-wrap gap-3"> {/* Use flex-wrap and gap for button spacing */}
-                {/* Ensure .btn-orange styles are defined in Home.css */}
-                <Button
-                  variant="warning" // Base variant (ignored if .btn-orange uses !important)
-                  size="lg"
-                  className="btn-orange" // Apply custom class
-                  onClick={() => handleButtonClick('Start Following')}
-                >
-                  Start Following
-                </Button>
-                <Button
-                  variant="warning" // Base variant
-                  size="lg"
-                  className="btn-orange" // Apply custom class
-                  onClick={() => handleButtonClick('Start Providing')}
-                 >
-                  Start Providing
-                </Button>
-              </div>
-            </Col>
+<section className="py-5 fresher-bg">
+  <Container>
+    <Row className="align-items-center gy-4">
+      {/* Text and Buttons */}
+      <Col md={6} className="mb-4 mb-md-0" data-aos="fade-right">
+        <h2 className="fw-bold mb-4">FRESHER TO TRADING?</h2>
+        <p className="lead">
+          Learn from the best! Our software lets you follow the footsteps of top traders who are
+          making most of the market. With Money Plant you can copy their investment decisions and
+          advice for maximum returns.
+        </p>
+        <div className="mt-4 d-flex flex-wrap gap-3">
+          <Button
+            variant="warning"
+            size="lg"
+            className="btn-orange"
+            onClick={() => handleButtonClick('Start Following')}
+          >
+            Start Following
+          </Button>
+          <Button
+            variant="warning"
+            size="lg"
+            className="btn-orange"
+            onClick={() => handleButtonClick('Start Providing')}
+          >
+            Start Providing
+          </Button>
+        </div>
+      </Col>
 
-            {/* Image on Right */}
-            <Col md={6} data-aos="fade-left">
-              <img
-                src="https://moneyplantfx.com/wp-content/uploads/2024/07/mobile1.png"
-                alt="Mobile phone displaying trading charts and interface" // Descriptive alt
-                className="img-fluid rounded shadow"
-              />
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      {/* Image on Right */}
+      <Col md={6} data-aos="fade-left">
+        <img
+          src="https://moneyplantfx.com/wp-content/uploads/2024/07/mobile1.png"
+          alt="Mobile phone displaying trading charts and interface"
+          className="img-fluid rounded shadow"
+        />
+      </Col>
+    </Row>
+  </Container>
+</section>
+
 
       {/* Profit 3 Logos Section */}
        {/* REFACTOR OPPORTUNITY: Map over an array of trader data */}
-      <section className="py-5 bg-white"> {/* Contrasting background */}
+      <section className="py-5 bg-transparent"> {/* Contrasting background */}
         <Container>
           <Row className="g-4 justify-content-center"> {/* Center cards if fewer than 3 */}
             {/* Card 1 */}
@@ -345,10 +386,12 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+      
+      
 
       {/* Wallet, Platforms, Extra Profit Section */}
       {/* Consider CSS class for background */}
-      <section style={{ backgroundColor: '#0056b3' }} className="py-5">
+      <section  className="py-5">
         <Container>
           <Row className="g-4">
 
@@ -446,7 +489,7 @@ const Home = () => {
 
       {/* Bigger Portfolio Text Section */}
       {/* Consider CSS class for background */}
-      <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
+      <section className="py-5">
         <Container className="text-center" data-aos="fade-up">
           <h2 className="fw-bold mb-3" style={{fontfamily: '"Roboto", Sans-serif',
     fontweight: "400",color:"#0050a0"}}>BIGGER PORTFOLIO & BIGGER RETURNS</h2>
@@ -464,7 +507,7 @@ const Home = () => {
       </section>
 
        {/* Platform Availability Logos Section - Placed correctly after the text */}
-      <section className="py-4" style={{ backgroundColor: '#f8f9fa' }}> {/* Continued background */}
+      <section className="py-4" > {/* Continued background */}
         <Container>
           {/* Using map for platform logos is good practice */}
           <Row className="text-center justify-content-center align-items-center g-4">
@@ -518,36 +561,69 @@ const Home = () => {
 
 
       {/* JUST 4 STEPS AWAY Section */}
-      <section className="py-5 text-center bg-white"> {/* Changed background */}
-        <Container>
-          {/* Top image */}
-          <img
-            src="https://moneyplantfx.com/wp-content/uploads/2024/07/leptop.png"
-            alt="Laptop showing trading interface"
-            className="img-fluid mb-4"
-             // Responsive max width: 80% of container, up to 600px max
-            style={{ maxWidth: 'min(80%, 600px)' }}
-             data-aos="zoom-in-up"
-           />
+<section 
+  className="py-5 text-center position-relative" 
+  style={{ 
+    backgroundImage: `url(${require('./images/investment.jpg')})`, 
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    minHeight: '80vh' // adjust height
+  }}
+>
+  {/* Semi-transparent dark/white overlay to fade the image */}
+  <div className="bg-overlay"></div>
 
-          {/* Text in between */}
-          <h2 className="fw-bold" data-aos="fade-up" style={{fontfamily: '"Roboto", Sans-serif',
-    fontsize: "45px",
-    fontweight: "400",color:"#0050a0"}}>JUST 4 STEPS AWAY</h2>
-          <h4 className="fw-bold " data-aos="fade-up" style={{fontfamily: '"Roboto", Sans-serif',
-    fontsize: "45px",
-    fontweight: "400",color:"#0050a0"}}>FROM YOUR DREAM INVESTMENTS</h4>
+  <Container className="position-relative">
+    {/* Top image */}
+    <img
+      src="https://moneyplantfx.com/wp-content/uploads/2024/07/leptop.png"
+      alt="Laptop showing trading interface"
+      className="img-fluid mb-4"
+      style={{ maxWidth: 'min(80%, 600px)' }}
+      data-aos="zoom-in-up"
+    />
+    
+    {/* Text in between */}
+    <h2 
+      className="fw-bold" 
+      data-aos="fade-up" 
+      style={{ 
+        fontFamily: '"Roboto", sans-serif',
+        fontSize: "45px",
+        fontWeight: "400",
+        color: "white"
+      }}
+    >
+      JUST 4 STEPS AWAY
+    </h2>
 
-          {/* Bottom image */}
-          <img
-            src="https://moneyplantfx.com/wp-content/uploads/2024/07/chart-1536x366.png"
-            alt="4 Steps Chart: Register, Fund, Choose Strategy, Start Trading"
-            className="img-fluid mt-3"
-            style={{ maxWidth: '100%' }} // Ensure it doesn't overflow container
-            data-aos="zoom-in-up" data-aos-delay="200"
-          />
-        </Container>
-      </section>
+    <h4 
+      className="fw-bold" 
+      data-aos="fade-up" 
+      style={{ 
+        fontFamily: '"Roboto", sans-serif',
+        fontSize: "45px",
+        fontWeight: "400",
+        color: "white"
+      }}
+    >
+      FROM YOUR DREAM INVESTMENTS
+    </h4>
+
+    {/* Bottom image */}
+    <img
+      src="https://moneyplantfx.com/wp-content/uploads/2024/07/chart-1536x366.png"
+      alt="4 Steps Chart: Register, Fund, Choose Strategy, Start Trading"
+      className="img-fluid mt-3"
+      style={{ maxWidth: '100%' }}
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
+    />
+  </Container>
+</section>
+
+      
      
 
       {/* Payment Methods Section */}
@@ -558,7 +634,7 @@ const Home = () => {
       
 
       {/* License Section */}
-      <section className="py-5 bg-light"> {/* Added bg-light */}
+      <section className="py-5 bg-transparent"> {/* Added bg-light */}
         <Container>
           <Row className="align-items-center gy-4"> {/* Added gy-4 for vertical gap */}
             {/* Text Section */}

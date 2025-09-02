@@ -68,7 +68,7 @@ const Contact = () => {
     }, []);
     
   return (
-    <div className="bg-light">
+    <div className="bg-transparent">
       {/* Hero Section */}
       <div
         style={{

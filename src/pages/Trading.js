@@ -17,7 +17,7 @@ const Trading = () => {
   return (
     <>
       {/* Hero Section with white background */}
-      <div className="py-5 bg-white">
+      <div className="py-5 bg-transparent">
         <Container className="text-center text-dark py-1">
           <h1 className="display-8  mb-1"data-aos="fade-down" style={{ color: '#0050a0' }}>
           COPY TRADING

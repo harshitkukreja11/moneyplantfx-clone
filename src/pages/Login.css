@@ -1,16 +1,35 @@
 .login-page {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
 }
 
 .login-card {
+  width: 100%;
   max-width: 350px;
-  max-height: 1000px;
   background: #ffffff;
   border-radius: 12px;
-  margin-top: 50px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
 .login-logo {
   max-width: 180px;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .login-card {
+    padding: 20px 15px;
+    margin: 0 10px; /* prevent card from touching edges */
+  }
+
+  .login-logo {
+    max-width: 140px;
+  }
 }

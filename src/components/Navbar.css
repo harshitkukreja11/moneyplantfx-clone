@@ -19,7 +19,7 @@
 .custom-nav-link,
 .custom-dropdown .nav-link,
 .custom-dropdown .dropdown-toggle {
-  color: #ffffff !important;
+  color: black !important;
   font-weight: 500;
   padding: 10px 16px;
   transition: all 0.3s ease-in-out;
@@ -241,6 +241,13 @@
   padding-left: 100%;
   animation: scroll-left 25s linear infinite;
 }
+.top-navbar {
+  background: transparent !important;
+}
+.custom-navbar {
+  background: transparent !important;
+}
+
 
 
 @keyframes scroll-left {
@@ -262,9 +269,19 @@
     height: 40px;
   }
 
-  .navbar-button-login,
-  .navbar-button-webterminal {
+   /* Style for the login button */
+  .navbar-button-login {
     padding: 0.25rem 0.75rem;
     font-size: 14px;
   }
+
+ /* Specific, smaller style for the web terminal button */
+.navbar-button-webterminal {
+  padding: 0.3rem 0.5rem !important;  /* Add !important */
+  font-size: 13px !important;       /* Add !important */
 }
+}
+
+
+
+

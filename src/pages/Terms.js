@@ -12,7 +12,7 @@ const App = () => {
       />
       <div className=" text-dark">
         {/* Header section with a bold, centered title */}
-        <header className="py-5 bg-white ">
+        <header className="py-5 bg-transparent ">
           <h4 className="display-4 fw-bold text-left text-dark px-3">Terms and Conditions<br></br>INTRODUCTION</h4>
         </header>
 
@@ -29,7 +29,7 @@ const App = () => {
 // Your provided Terms component with Bootstrap styling applied
 const Terms = () => {
   return (
-    <div className="bg-white   p-4 p-md-1 mb-5">
+    <div className="bg-transparent   p-4 p-md-1 mb-5">
       <p className="mb-4  text-secondary ">
         This Risk Disclosure and Warning Notice is provided to you, whether you are an existing or prospective client, in accordance with the requirements of the Financial Services Commission (FSC) under the Securities Act 2005, Rule 4 of the Securities (Licensing) Rules 2007, and the Financial Services (Consolidated Licensing and Fees) Rules 2008, as applicable to Money Plant FX (hereinafter referred to as the “Company”).
       </p>

@@ -39,7 +39,7 @@ const Accounts = () => {
   }, []);
 
   return (
-    <div className="bg-light py-5">
+    <div className="bg-transparent py-5">
       <Container>
         <h2 className="text-center fw-bold mb-5" data-aos="fade-down" style={{ color: '#0050a0' }}>ACCOUNT TYPES</h2>
         <p className="text-center text-muted mb-4">
